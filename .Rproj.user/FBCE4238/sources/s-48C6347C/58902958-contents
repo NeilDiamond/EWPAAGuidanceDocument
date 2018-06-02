@@ -1,0 +1,1991 @@
+---
+title: "Compliance Methods"
+author: "Neil Diamond"
+date: "24 August 2015"
+output: word_document
+---
+
+```{r, echo=FALSE}
+pander::panderOptions('table.split.table', 'inf')
+
+```
+
+
+
+  
+
+
+Contents 
+Page 
+
+Foreword ..............................................................................................................................................................4 
+
+
+1 Scope ...................................................................................................................................................... 5 
+
+
+2 Normative references ............................................................................................................................ 5 
+
+
+3 Terms and definitions ........................................................................................................................... 5 
+
+
+4 Symbols and indices ............................................................................................................................. 7 
+
+
+4.1 Letter symbols (see also EN 326-1 :1994) ............................................................................................. 7 
+
+
+4.2 Indices (see also EN 326-1: 1994) .......................................................................................................... 9 
+
+
+5 Initial type testing (ITT) ......................................................................................................................... 9 
+
+
+5.1 General  
+
+5.2 Initial type testing by variables 
+
+5.2.1 General 
+
+5.2.2 Sampling of panels
+
+5.2.3 Evaluation 
+
+6 Factory production control ................................................................................................................ 13 
+
+
+6.1 General ................................................................................................................................................. 13 
+
+
+6.2 Sampling .............................................................................................................................................. 13 
+
+
+6.2.1 General ................................................................................................................................................. 13 
+
+
+6.2.2 Sample Size 
+
+
+
+
+
+
+6.3 Control of production 
+
+
+6.3.1 General 
+
+
+6.3.2 Factory production control by variables for batch production ..................................................... 15 
+
+6.3.2.1 Batch factory control where retesting is not carried out 
+
+6.3.2.2 Batch factory controlwhere retesting is carried out 
+
+6.3.2.3 Factory production control using rolling standard deviation and continuous monitoring 
+
+6.3.2.3.1 Mathod for updating the rolling standard deviation
+
+6.3.2.4 Mathod for establishing and monitoring the rolling standard deviation
+
+6.3.2.5 Setting a process mean value
+
+
+
+
+Annex A (informative) Examples 
+
+##Foreword 
+
+
+
+#1 Scope 
+
+
+
+For external control, if required, methods for the initial inspection of a factory and initial type testing of a 
+product, and for the surveillance of the factory production control, are given. In the factory production control small test pieces are used. The statistics of evaluation is based on normal 
+distribution. 
+
+#2 Normative references 
+
+
+
+#3 Terms and definitions 
+For the purpose of this document, the terms and definitions given in EN 326-1 :1994 and the following apply. 
+
+
+##3.1 
+
+Acceptable quality level 
+
+AQL 
+
+maximum percentage of non-conforming panels that for the purpose of sampling inspection can be considered 
+satisfactory as a process average 
+
+##3.2 
+
+At Random 
+
+sampling of panels in such a way that each panel of the inspection lot has an equal chance of being selected, 
+and cutting of test pieces from a single panel in such a way that each part of the panel has an equal chance of 
+being selected as a test piece 
+
+
+##3.3 
+
+Batch 
+
+panels of the same product type produced in a shift or continuous run
+
+##3.4 
+
+Defective 
+
+panel which does not meet the required specification limit of the relevant characteristic 
+
+##3.5 
+
+Inspection body 
+
+body which is responsible for external control 
+
+##3.6 
+
+Inspection by attributes 
+
+inspection whereby either the unit of product is classified simply as conforming or non-conforming, or the 
+number of nonconformities in the unit of product is counted, with respect to a given requirement or set of 
+requirements 
+
+##3.7 
+
+Inspection by variables 
+
+inspection whereby the conformity of a panel characteristic can be measured on a continuous scale 
+
+##3.8 
+
+Inspection lot (for factory control) 
+
+portion of production which is presented for sampling and inspection, consisting of panels of the same type, 
+normally within the same thickness range, coming from the same production line and manufactured under 
+essentially the same conditions 
+
+
+##3.9 
+
+inspection lot size $N$ 
+
+number of panels in one inspection lot 
+
+##3.10 
+
+lower specification limit $L$ 
+
+Value required by the AS?NZS specification that 95 % of the panels should have values greater than or equal to 
+
+##3.11 
+
+Panel 
+
+piece of wood-based sheet material large enough to permit the cutting of test pieces 
+
+##3.12 
+
+Percent defective 
+
+extent of non-conformity of a panel product expressed by percentage defective panels in the total number of 
+panels inspected 
+
+##3.13 
+
+Production site 
+
+single production line 
+
+##3.14 
+
+Product type 
+
+panel type, irrespective of thickness, as defined in the relevant AS/NZS specification 
+
+##3.15 
+
+Reference population 
+
+wood-based panels for which the relationship between test values is relevant 
+
+##3.16 
+
+Quality characteristic 
+
+characteristic that is essential for the evaluation of a product or product type in accordance with a relevant AS/NZS 
+specification 
+
+##3.17 
+
+Sample 
+
+collection of panels which are drawn from an inspection lot 
+
+NOTE Unless otherwise agreed, the panels of the sample are drawn at random. 
+
+##3.18 
+
+Test piece 
+
+piece of panel cut to the size required for testing a specific characteristic 
+
+##3.19 
+
+Test value $x_{ij}$ 
+
+single value or measurement of a specific characteristic obtained from a test piece 
+
+##3.20 
+
+Thickness range 
+
+panels with a thickness for which the same specification limits are valid according to the relevant AS/NZS 
+specification 
+
+##3.21 
+
+Upper specification limit $U$ 
+
+value required by the AS/NZS specification that 95 % of the panels should have values lower than or equal to 
+
+##3.22 
+
+Variable 
+
+test value or measurement which can be measured on a continuous scale 
+
+#4 Symbols and indices 
+
+##4.1 Letter symbols (see also EN 326-1:1994) 
+
+$Ac$ Acceptance number 
+
+$AQL$ Acceptable quality level 
+
+$a$ Linear correlation constant 
+
+$b$ Linear correlation factor 
+
+$c_\mbox{conv}$ Conversion factor 
+
+$F$ Statistical factor 
+
+$L$ Lower specification limit 
+
+In Number of test pieces cut from each single panel of the sample, in either test direction 
+
+$n$ Sample size (number of panels) 
+
+$N$ Number of panels in one inspection lot, i.e. inspection lot size 
+
+$r$ Correlation coefficient; coefficient of linear regression 
+
+$Re$ Rejection number 
+
+$s_{\bar{x}}$ Estimate of the standard deviation of a characteristic between panel means $\bar{x}_j$ 
+
+$s_{\delta \bar{x}}$ 
+Estimate of the standard deviation of the relative differences of the panel means $\delta x_j$ 
+
+$s_{\Delta \bar{x}}$
+Standard deviation between panel differences 
+
+$s_{w_j}$
+
+Estimate of the standard deviation of a characteristic within a panel $j$ of the sample 
+
+$s_{\bar{x_j},alt}^2$
+
+Variance of panel means of the alternative testing procedure 
+
+$s_{\bar{x_j},ref}^2$
+
+Variance of panel means of the reference standard test
+
+$t$
+
+Statistical factor, see Table 1 
+
+$U$
+
+U Upper specification limit 
+
+$\delta$
+
+t5 Relative difference 
+
+$\Delta$
+
+Absolute difference 
+
+$V_{w,j}%$
+
+Coefficient of variation within a panel $j$ of the sample 
+
+$V_{\bar{x}}$
+
+Coefficient of variation between the panel means $\bar{x}_j$ 
+
+$\varphi_{conv}$
+
+Linear conversion function 
+
+$X_{i,j}$
+
+Single test value or measurement 
+
+$\bar{X_j}$
+
+Mean value of the m test values (or measurements) obtained from a single panel $j$ 
+
+$\bar{\bar{x_n}}$
+
+Grand mean of $n$ single panel mean values 
+
+$\bar{x_{j,alt}}$
+
+Test value of the population of the alternative test procedure 
+
+$\bar{x_{j,ref}}$
+
+
+Test value of the population of the reference standard test method 
+
+$\Delta \bar{x}$
+
+ 
+Test value of the difference between the alternative test procedure and the reference standard 
+test method 
+
+
+##4.2 Indices (see also EN 326-1 : 1994) 
+
+$alt$
+
+Related to alternative testing procedure 
+
+$attr$
+
+Related to inspection by attributes 
+
+$conv$
+
+Related to conversion function 
+
+$cu$
+
+Cumulative value 
+
+$d$
+
+Related to double sample plan 
+
+$ext$
+
+Test results from the external control 
+
+$i$
+
+Serial test piece number within a panel ($i$ = 1, 2, ..., $m$) 
+
+$ITT$
+
+Test results related to initial type testing 
+
+$j$
+
+Test panel identification number within a sample ($j$ = 1, 2, ... , 11)
+
+$m$
+
+Related to number of test pieces of a panel 
+
+$n$
+
+Related to the number of panels of a sample 
+
+$ref$
+
+Related to reference standard test 
+
+$si$
+
+Related to single sampling plan 
+
+$w$
+
+Characteristic within a panel 
+
+#5 Initial type testing (ITT) 
+
+##5.1 General 
+
+Initial type testing shall be performed at the beginning of the production of a new product type. Initial type testing shall be performed according to this standard where demonstration of compliance is required except where tests were previously preformed in accordance with the provisions of these standards (i.e. same product, same characteristic(s), test method, sampling procedure, system of conformity, etc.). In this case previous data can be used.
+
+
+
+##5.2 Initial type testing by variables 
+
+###5.2.1 General 
+
+In general, the requirements of the panel properties are fulfilled if at least 95 % of the panel means for each 
+characteristic are above the lower L or below the upper U specification limit respectively. 
+NOTE For examples, see Annex A. 
+
+Where non-standard test methods are utilised the value of the test results should be adjusted by a factor based on linear correlations between the two methods as outlined in Appendix E of EN 326-2:2010.
+
+###5.2.2 Sampling of panels 
+The initial type testing shall comprise panels from not less than three production shifts. 
+The minimum number of panels in the initial type testing sample $n_{ITT}$ of a factory production is 12 panels per 
+product type with at least two panels from each production line. 
+The minimum number of panels may be reduced to 6, if the product properties can be documented from 
+internal records of at least 12 tested panels in the start up period. 
+
+The number of test pieces selected for each test shall be in accordance with AS/NZS…… or with agreement from the certifying body.
+
+
+###5.2.3 Evaluation 
+
+####5.2.3.1 Evaluation by using the test results directly 
+
+#####5.2.3.1.1 Compliance of the ITT sample 
+
+
+
+####5.2.3.1 Evaluation by using the test results directly 
+
+#####5.2.3.1.1 Compliance of the ITT sample 
+Calculate the mean value $\bar{x}_{ITT,j}$ for each panel, the grand mean value $\bar{\bar{x}}_{ITT}$ the panels and, the standard deviation between the panels $S_{\bar{x},ITT}$ for each relevant characteristic in accordance with Equations (1) and (2): 
+
+\[\bar{\bar{x}}_{ITT} = \frac{\sum_{j=1}^{j=n_{ITT}}\bar{x}_{ITT,j}}{n_{ITT}}\]
+(1)
+
+and 
+\[s_{\bar{x},ITT}=\sqrt{\frac{\sum_{j=1}^{j=n_{ITT}}(\bar{x}_{ITT,j}-\bar{\bar{x}})^2}{(n_{ITT}-1)}}\]
+(2)
+
+To fulfil the specification requirement the lower 5 % value or upper 95 % value shall be higher than or equal to 
+the lower specification limit L or lower than or equal to the upper specification limit V respectively, when 
+calculated according to the Equation (3) or (4), respectively: 
+
+
+\[L_{5\%}=\bar{\bar{x}}-k_{n_{ITT}} \times s_{\bar{x},ITT}\]
+(3)
+or
+
+\[U_{95\%} = \bar{\bar{x}}_{ITT} + k_{n_{ITT}} \times s_{\bar{x},ITT}\]
+(4)
+where 
+
+$k_{n_{ITT}}$ shall be taken from Table 1 with estimated standard deviation with acceptance probability at the 5th percentile set to 0.5. 
+
+
+
+
+
+
+
+
+
+~~NOTE The table values correspond to a 95 % confidence limit, single-sided case, in accordance with ISO 2602:1980.
+
+
+
+
+
+
+| Sample Size | Estimated Std.Dev |
+|:-----------:|:-----------------:|
+|             | Acceptance Prob   |
+|             | 0.50              |
+| 12          | 1.691             |
+| 13          | 1.687             |
+| 14          | 1.684             |
+| 15          | 1.681             |
+| 16          | 1.679             | 
+| 17          | 1.676             |
+| 18          | 1.674             |
+| 19          | 1.673             |
+| 20          | 1.671             |
+| 21          | 1.670             |
+| 22          | 1.669             |
+| 23          | 1.668             |
+| 24          | 1.667             |
+| 25          | 1.666             |
+| 26          | 1.665             |
+| 27          | 1.664             |
+| 28          | 1.663             |
+| 29          | 1.663             |
+| 30          | 1.662             | 
+
+~~NOTE The table values are based on the non-central t distribution and assume only one round of testing is conducted. 
+
+
+
+#####5.2.3.1.2 Variability within panels of the ITT sample 
+
+
+
+The mean standard deviation within panels of the ITT sample $\bar{S}_{w,ITT}$, where "w" is indicating "within" panels, 
+shall be derived from the standard deviation within each panel $S_{W_{J}}$ of the sample [equation (13)] according to 
+Equation (5): 
+
+\[\bar{S}_{w,ITT} = \sqrt{\frac{\sum_{j=1}^{j=n_{ITT}}s_{w,ITT}^2}{n_{ITT}}}\]
+(5)
+
+####5.2.3.2 Evaluation by using relative test results 
+
+
+
+
+If the sample consists of panels which are covered by different lower L and/or upper U specification limits (for 
+example by combining different thickness ranges of the same standard type of panel product), the evaluation 
+shall be carried out on test results related to each specification limit as follows: 
+
+Calculate for each individual panel the relative mean $\delta{x}$ relevant to either the lower L or upper U 
+specification limit according to Equation (6) or (7), respectively: 
+
+\[\delta{x}_{j,L} = \frac{\bar{x}_{j}-L}{L}\]
+(6)
+
+
+or 
+
+\[\delta{x}_{j,U} = \frac{\bar{x}_{j}-U}{U}\]
+(7) 
+
+Calculate the grand mean of the relative differences of all panels of the inspection sample according to: 
+
+\[\delta{\bar{x}} = \frac{\sum_{1}^{n}\delta{\bar{x}}_j}{x}\]
+(8) 
+
+
+and the standard deviation $s_{\delta{\bar{x}}}$ of the relative differences between the panel means according to: 
+
+
+\[s_{\delta{\bar{x}}} = \sqrt{\frac{\sum_{1}^{n}(\delta{\bar{x}}-\bar{\delta{\bar{x}}})^2}{n-1}}\]
+(9) 
+
+
+
+To fulfil the specification requirement the lower 5 % value or the upper 95 % value, respectively, shall be equal 
+to or greater than zero for characteristics with a lower specification limit $L$ or equal to or less than zero for 
+characteristics with an upper specification limit $U$ when calculated according to Equation (10) or (11), 
+respectively: 
+
+\[L_{\delta, 5\%} = \bar{\delta{\bar{x}}} - k_{n}\times s_{\bar{\delta}\bar{x}}\]
+(10) 
+
+or 
+
+\[U_{\delta, 95\%} = \bar{\delta{\bar{x}}} - k_{n}\times s_{\bar{\delta}\bar{x}}\]
+(11 ) 
+
+
+
+
+#6 Factory production control 
+
+##6.1 General 
+
+The manufacturer shall control in each separate production line those characteristics of panels which are 
+required by AS/NZS? with further reference to other relevant specific product standards. 
+
+In cases where the manufacturer chooses to claim panel characteristics higher than the specification levels of 
+AS/NZS?, with further reference to relevant specific product standards, the factory production control shall be 
+carried out according to the characteristic levels claimed. 
+
+Samples shall be drawn from each product type and thickness range. The production may be further 
+subdivided, for example, by thickness. 
+
+Procedures alternative to the standardised procedure (for example, unconditioned or in-line testing) may be 
+used for the determination of panel characteristics, provided that a statistically significant relationship can be 
+established between the specified characteristic and the measured characteristic. See de3tails in section 5.2.1/
+
+Systematic differences arising from the use of alternative procedures shall be taken into account by individual 
+correction factors which shall be determined by experiment. The correction factors shall be verified from time 
+to time. 
+
+##6.2 Sampling 
+
+###6.2.1 General 
+
+Sampling shall be carried out in accordance with the relevant AS/NZS specification. 
+
+
+
+###6.2.2 Sample size
+
+The following tables give the required sample size (number of panels per batch) that are to be tested so as to achieve a desired probability of acceptance with a specified quality level (proportion of batch means above the lower or upper specification limit).
+
+####Estimated sd, No retesting, Acc Prob=0.5
+
+```{r, echo=F, warning=FALSE}
+kvalue <- function(n, stdquality=0.95, stdaccprob=0.5, stdev=c("estimated","rolling")){
+  stdev <- match.arg(stdev)
+  if(stdev=="estimated"){degfreedom <- n-1} else if(stdev=="rolling"){degfreedom <- 29}
+  qt(1-stdaccprob, degfreedom, -sqrt(n)*qnorm(1-stdquality))/sqrt(n)
+}
+  
+
+
+accprob <- function(n, quality, stdquality=0.95, stdaccprob=0.5, stdev=c("estimated","rolling")){
+  stdev <- match.arg(stdev)
+  if(stdev=="estimated"){degfreedom <- n-1} else if(stdev=="rolling"){degfreedom <- 29}
+  1-pt(kvalue(n, stdquality=stdquality, stdaccprob=stdaccprob)*sqrt(n), degfreedom, -sqrt(n)*qnorm(1-quality))
+}
+
+
+
+
+
+
+samplesize <- function(quality, accprob, stdquality=0.95, stdaccprob=0.5, maxval=30, stdev=c("estimated","rolling", "known")){
+  stdev <- match.arg(stdev)
+  if (stdev=="known"){
+    n <- ceiling(((qnorm(1-accprob)-qnorm(1-stdaccprob))/(qnorm(1-quality)-qnorm(1-stdquality)))^2)
+    if(n>30){ n <- NA}
+  } else {
+  n <- 2
+  if(stdev=="estimated"){degfreedom <- n-1} else if(stdev=="rolling"){degfreedom <- 29}
+  while (accprob(n, quality, stdaccprob=stdaccprob, stdev=stdev )-accprob < 0) {
+    if(stdev=="estimated"){degfreedom <- n-1} else if(stdev=="rolling"){degfreedom <- 29}
+    if (n >= maxval) {
+      n <- NA
+      break
+    }
+    n <- n+1
+  }
+  }
+  
+  return(n)
+}
+
+
+
+qual <- c(seq(.96,.99,.01),.995)
+accprob1 <- seq(0.55,0.95,.05)
+ss1 <- matrix(NA, length(qual), length(accprob1))
+for (i in 1:length(qual)){
+  for (j in 1:length(accprob1)){
+    ss1[i,j] <- samplesize(qual[i],accprob1[j])
+  }
+}
+ss1[is.na(ss1)] <- " "
+
+
+
+
+```
+
+
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+library(pander)
+
+colnames(ss1) <- accprob1
+rownames(ss1) <- qual
+#print(xtable(ss1, digits=0),caption="Example 1",align=rep("c",10),caption.placement="top",
+#      include.rownames=T, type="html")
+pander(ss1)
+
+```      
+
+
+
+####Rolling sd, No retesting, Acc Prob=0.5
+
+```{r, echo=FALSE}
+qual <- c(seq(.96,.99,.01),.995)
+accprob1 <- seq(0.55,0.95,.05)
+ss3 <- matrix(NA, length(qual), length(accprob1))
+for (i in 1:length(qual)){
+  for (j in 1:length(accprob1)){
+    ss3[i,j] <- samplesize(qual[i],accprob1[j],stdev="rolling")
+  }
+}
+ss3[is.na(ss3)] <- " "
+
+
+```
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+
+colnames(ss3) <- accprob1
+rownames(ss3) <- qual
+#print(xtable(ss3, digits=0),caption="Example 1",align=rep("c",10),caption.placement="top",
+#      include.rownames=T, type="html")
+pander(ss3)
+```      
+
+
+
+#### Known sd, No retesting, Acc Prob=0.5
+
+```{r, echo=FALSE}
+qual <- c(seq(.96,.99,.01),.995)
+accprob1 <- seq(0.55,0.95,.05)
+ss5 <- matrix(NA, length(qual), length(accprob1))
+for (i in 1:length(qual)){
+  for (j in 1:length(accprob1)){
+    ss5[i,j] <- samplesize(qual[i],accprob1[j],stdev="known")
+  }
+}
+ss5[is.na(ss5)] <- " "
+
+
+```
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+
+colnames(ss5) <- accprob1
+rownames(ss5) <- qual
+#print(xtable(ss5, digits=0),caption="Example 1",align=rep("c",10),caption.placement="top",
+#      include.rownames=T, type="html")
+pander(ss5)
+```      
+
+The current quality level can be calculated as $$\Phi \left( \frac{\bar{\bar{x}-L}{\sigma_B}\right)$$
+where $\Phi()$ is the cumulative Normal distribition, $\bar{\bar{x}}$ is the process mean, $L$ is the Lower Specification limit, and $\sigma_B$ is the between panel standard deviation.
+
+Samples should be selected at random. This can be achieved from a continuous process by randomising the sample cutting pattern. In a multi-daylight process daylight selection and location within the daylight/board should be randomised.
+
+
+
+
+
+##6.3 Control of production 
+
+###6.3.1 General 
+
+For assessing compliance of a product by variables the following methods shall be used: 
+Factory production control by variables for batch production according to 6.3.2, or 
+Internal records of an established product according to 6.3.4. 
+
+
+
+###6.3.2 Factory production control by variables for batch production 
+
+In order to evaluate the compliance of the last batch production with the requirements of AS/NZS standards, with 
+further reference to other relevant specific product standards, the manufacturer shall use the following 
+procedure unless alternative procedures are adopted giving at least the same level of confidence. 
+
+
+
+
+##6.3.2.1 Batch factory production control where no retesting is carried out
+
+To establish the conformity of the panels with the requirements, estimates shall be calculated of the lower $_{1}L_{x}$, 
+or upper $_{1}U_{x}$ confidence limit, respectively, for the production period, according to Equations (17) and (18), respectively: 
+
+\[_{1}L_{x} = \bar{x} - k_{n}\times {s}_{\bar{x}}\]
+(17)
+
+or
+
+\[_{1}U_{x} = \bar{x} - k_{n}\times {s}_{\bar{x}}\]
+(18)
+
+where $n$ is the number of panels sampled.
+
+
+
+The $k_{n}$-values in relation to the number panels sampled are given in the table below. 
+
+If $_1L_x$ is equal to or greater than the lower specification limit $L$, or if $_1U_x$ is equal to or less than the upper 
+specification limit $U$, respectively, the panel characteristics shall be considered to be in conformity with the 
+requirements. If the requirements are not met, the panels of the respective production period shall be down-graded. 
+
+
+| Sample Size | Estimated Std.Dev |Rolling Std. Dev     |Known Std. Dev       | 
+|:-----------:|:-----------------:|:-------------------:|:-------------------:|
+|             | Acceptance Prob   | Acceptance Prob     | Acceptance Prob     | 
+|             | 0.50              | 0.50                | 0.50                |
+| 2           | 2.339             | 1.660               | 1.645               |
+| 3           | 1.939             | 1.660               | 1.645               |
+| 4           | 1.830             | 1.660               | 1.645               |
+| 5           | 1.779             | 1.660               | 1.645               |
+| 6           | 1.751             | 1.660               | 1.645               | 
+| 7           | 1.732             | 1.660               | 1.645               |
+| 8           | 1.719             | 1.661               | 1.645               |
+| 9           | 1.709             | 1.661               | 1.645               | 
+| 10          | 1.702             | 1.661               | 1.645               | 
+| 11          | 1.696             | 1.661               | 1.645               | 
+| 12          | 1.691             | 1.661               | 1.645               |
+| 13	        | 1.687		          | 1.661		            | 1.645  	            |
+| 14 	        | 1.684		          | 1.661		            | 1.645  	            |
+| 15          | 1.681             | 1.661               | 1.645               |
+| 16	        | 1.679		          | 1.661		            | 1.645  	            |
+| 17          | 1.676		          | 1.661		            | 1.645  	            |
+| 18 	        | 1.674		          | 1.661		            | 1.645  	            | 
+| 19 	        | 1.673		          | 1.662		            | 1.645  	            |
+| 20          | 1.671             | 1.662               | 1.645               |
+| 21	        | 1.670		          | 1.662		            | 1.645  	            |
+| 22 	        | 1.669		          | 1.662		            | 1.645  	            | 
+| 23	        | 1.668		          | 1.662		            | 1.645  	            | 
+| 24	        | 1.667		          | 1.662		            | 1.645  	            | 
+| 25          | 1.666             | 1.662               | 1.645               | 
+| 26	        | 1.665		          | 1.662		            | 1.645  	            |
+| 27	        | 1.664		          | 1.662		            | 1.645  	            |
+| 28	        | 1.663		          | 1.662		            | 1.645  	            |
+| 29	        | 1.663		          | 1.662		            | 1.645  	            |
+| 30          | 1.662             | 1.662               | 1.645               | 
+
+~~NOTE The table values are based on the non-central t distribution and assume only one round of testing is conducted. 
+
+
+##Batch factory production control where retesting is allowed
+
+To establish the conformity of the panels with the requirements, estimates shall be calculated of the lower $_{1}L_{x}$, 
+or upper $_{1}U_{x}$ confidence limit, respectively, for the production period, according to Equations (17) and (18), respectively: 
+
+\[_{1}L_{x} = \bar{x} - k_{n}\times {s}_{\bar{x}}\]
+(17)
+
+or
+
+\[_{1}U_{x} = \bar{x} - k_{n}\times {s}_{\bar{x}}\]
+(18)
+
+where: 
+the $n$ is the number of panels sampled.
+
+
+
+The $k_{n}$-values in relation to the number panels sampled are given in the table below. 
+
+If $_1L_x$ is equal to or greater than the lower specification limit $L$, or if $_1U_x$ is equal to or less than the upper 
+specification limit $U$, respectively, the panel characteristics shall be considered to be in conformity with the 
+requirements.
+
+
+If the requirements are not met, a further set of panels shall be sampled with the same sample size.  In this 
+case the grand mean values $\bar{\bar{x}}_{1,2}$, shall be calculated according to Equation (21): 
+
+Note: If a data point from a sample is suspected to be an outlier a Grubbs test should be carried out and if the result of the test identifies the data point as an outlier it should be discarded and a new sample taken.
+
+
+| Sample Size | Estimated Std.Dev |Rolling Std. Dev     | Known Std. Dev      |
+|:-----------:|:-----------------:|:-------------------:|:-------------------:|
+|             | Acceptance Prob   | Acceptance Prob     | Acceptance Prob     |
+|             | 0.50              | 0.50                | 0.50                |
+| 2           | 2.731             | 2.499               | 1.824               |
+| 3           | 2.195             | 2.117               | 1.791               |
+| 4           | 2.038             | 1.992               | 1.772               |
+| 5           | 1.960             | 1.927               | 1.758               |
+| 6           | 1.913             | 1.886               | 1.748               |
+| 7           | 1.880             | 1.857               | 1.741               |
+| 8           | 1.857             | 1.836               | 1.735               |
+| 9           | 1.839             | 1.819               | 1.729               |
+| 10          | 1.824             | 1.805               | 1.725               | 
+| 11          | 1.812             | 1.794               | 1.721               |                    
+| 12          | 1.802             | 1.784               | 1.718               | 
+| 13          | 1.794             | 1.776               | 1.715               |     
+| 14          | 1.786             | 1.769               | 1.713               | 
+| 15          | 1.780             | 1.763               | 1.710               | 
+| 16          | 1.774             | 1.757               | 1.708               |         
+| 17          | 1.769             | 1.752               | 1.706               | 
+| 18          | 1.765             | 1.747               | 1.705               |
+| 19          | 1.761             | 1.743               | 1.703               | 
+| 20          | 1.757             | 1.739               | 1.702               |  
+| 21          | 1.753             | 1.736               | 1.700               |
+| 22          | 1.750             | 1.732               | 1.699               | 
+| 23          | 1.747             | 1.729               | 1.698               |
+| 24          | 1.745             | 1.727               | 1.697               |
+| 25          | 1.742             | 1.724               | 1.696               |
+| 26          | 1.740             | 1.721               | 1.695               |
+| 27          | 1.738             | 1.719               | 1.694               |
+| 28          | 1.736             | 1.717               | 1.693               | 
+| 29          | 1.734             | 1.715               | 1.692               |
+| 30          | 1.732             | 1.713               | 1.691               | 
+
+~~NOTE The table values are based on the non-central t distribution and assume two rounds of testing are allowed. 
+
+
+
+##6.3.2.3 Factory production control using a rolling standard deviation and continuous monitoring
+
+In the previous tables, the testing is performed at the end of a production run. In most cases it would be desirable to sample and test during the production run. In that case, different k factors can be used. At the beginning of the run, the planned sample size needs to be specified. As regular intervals during the run, a panel is sampled and tested. To establish the conformity of the panels with the requirements, estimates shall be calculated of the lower $_{1}L_{x}$, 
+or upper $_{1}U_{x}$ confidence limit, respectively, for the immediately preceeding production period, respectively: 
+
+\[_{1}L_{x} = \bar{x} - k_{p}\times \bar{s}_{r}\]
+
+or
+
+\[_{1}U_{x} = \bar{x} - k_{p}\times \bar{s}_{r}\]
+
+where: 
+the $p$ is the number of panels which are planned to be sampled during the run, and $\bar{s}_{r}$ is the rolling standard deviation based on the last 30 panel means. If the criteria above are satisfied (with retesting if allowed), then production can continue, while if the criteria are not satisfied, then the immediately preceding production should be downgraded. 
+
+Note: If a data point from a sample is suspected to be an outlier a Grubbs test should be carried out and if the result of the test identifies the data point as an outlier it should be discarded and a new sample taken.
+
+The k factors are chosen so that the probability of acceptance of the entire run at the 5th percentile is set to  0.5 for all parameters. The k factors are given in the table below. Note that the k factors are negative when retesting is not allowed and the planned sample size is greater than 13 panels when the acceptance probability is 0.5, and the planned sample size is greater than 27 panels when the acceptance probability is 0.25.
+
+| Sample Size | No Retesting      | Retesting           | 
+|:-----------:|:-----------------:|--------------------:|
+|             | Acceptance Prob   | Acceptance Prob     |  
+|             | 0.50              | 0.50                |  
+| 1           | 1.659             | 2.057               | 
+| 2           | 1.104             | 1.543               | 
+| 3           | 0.828             | 1.290               | 
+| 4           | 0.649             | 1.127               |
+| 5           | 0.518             | 1.009               |
+| 6           | 0.415             | 0.917               |
+| 7           | 0.332             | 0.841               |
+| 8           | 0.261             | 0.778               |
+| 9           | 0.200             | 0.724               |
+| 10          | 0.147             | 0.676               |
+| 11          | 0.100             | 0.634               |
+| 12          | 0.057             | 0.596               |
+| 13          | 0.019             | 0.562               |
+| 14          | -0.017            | 0.530               |
+| 15          | -0.049            | 0.501               | 
+| 16          | -0.079            | 0.475               |
+| 17          | -0.107            | 0.450               |
+| 18          | -0.134            | 0.427               |
+| 19          | -0.158            | 0.405               |
+| 20          | -0.181            | 0.384               |
+| 21          | -0.203            | 0.365               |
+| 22          | -0.224            | 0.347               |
+| 23          | -0.243            | 0.329               |
+| 24          | -0.262            | 0.313               | 
+| 25          | -0.280            | 0.297               |
+| 26          | -0.297            | 0.282               |
+| 27          | -0.313            | 0.268               |
+| 28          | -0.329            | 0.254               |
+| 29          | -0.349            | 0.241               |
+| 30          | -0.359            | 0.228               |
+
+~~NOTE The table values are based on the non-central t distribution and assume no retesting and two rounds of testing are allowed, respectively. 
+
+
+
+##6.3.2.3.1 Method of updating the rolling standard deviation
+
+There is no need to recalculate the rolling standard deviation based on Equations (1) and (2). Instead, a simple updating formula can be used.
+Assume that the last 30 panel means are, in production order, given by $x_0, x_1, \ldots, x_{29}$, with grand mean $\bar{\bar{x}}_{O}$ and standard deviation $s_O$. When an additional panel mean, $x_{30}$ is available, the first panel mean, $x_0$ is discarded and the new panel mean, $x_{30}$ is added to the calculations to give a new grand mean $\bar{\bar{x}}_{N}$ with standard deviation  $s_N$. This can be calculated using Equations (1) and (2), or by the updating formalae
+
+\[\bar{\bar{x}}_{N}=\bar{\bar{x}}_{O}+\frac{x_{30}-x_0}{30}\]
+and
+\[s_N=\sqrt{s_O^2+\frac{(x_{30}-x_0)(x_{30}-\bar{\bar{x}}_{N}+x_0-\bar{\bar{x}}_{O})}{29}}.\]
+
+
+
+
+
+###6.3.3.4 Metod of establishing and monitoring the known standard deviation
+
+
+Monitoring of the statistical control of the standard deviation is desirable. If the process is in control then the known standard deviation k values can be used.
+
+For each bath the grand mean of the panel means, $\bar{\bar{x}}$ should be calculated, as well as the standard deviation of the of the panel means, $s_{\bar{x}}$.
+
+An overall average standard deviation should be calculated. This should be the square root of the average squared standard deviation of the panel means, weighted by the number of sampled panels in the batch minus 1, i.e. $$\bar{s}=\sqrt{\frac{\sum((n_b-1)s_{\bar{x}}^2}{\sum((n_b-1)}}.$$
+
+At least 30-40 batches should be included in the calculation of $\bar{s}$ and the value should be reviewed/updated from time to time (e.g. monthly). 
+
+To monitor the standard deviation, an s control chart should be used. The standard deviation of the panel means should be plotted against the batch number. The lower control limit is given by $$\mbox{LCL} = c_{n_b} \times \bar{s},$$ while the upper control limit is given by $$\mbox{UCL} = d_{n_b} \times \bar{s},$$ with tables of $c_{n_b}$ and $d_{n_b}$ are given below, where $n_b$ is the number of panels sampled per batch.
+
+```{r, echo=FALSE}
+limits <- round(cbind(2:30,sqrt(qchisq(.00135,1:29)/1:29),sqrt(qchisq(.99865,1:29)/1:29)),3)
+```
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+colnames(limits) <- c("$n_b$","$c_{n_b}}$", "$d_{n_b}}$")
+#print(xtable(limits, digits=c(0,0,3,3), align=rep("c",4)), type="html",include.rownames=F,
+#      align=rep("c",4))
+pander(limits)
+```
+
+
+Note that the LCL and UCL depend on the number of panels sampled per batch and if these vary then so do the control limits. Also note that the control limits have nothing to do with the specification limits.
+
+Values of the standard deviation outside the limits indicate that the process is out of statistical control and adjustments to the process must be made.
+
+#### Standardised Control Chart
+
+It may be desirable to standardize the control chart for ease of reviwing it. This can be done in the following way:
+
+If $G_{n_b-1}(x)$ is the cumulative distribution of the chi-square distribution with $n_b-1$ degrees of freedom, and $\Phi^{-1}(p)$ is the inverse Normal distribution, then a standardised control chart can be made by transforming the standard deviations using the transformation
+$$h(s)=\Phi^{-1}\left(G_{n_b-1}\left( \frac{(n_b-1)s^2_b}{\bar{s}^2}\right) \right)$$ with $LCL=-3$ and $UCL=3$.
+
+#6.2.3.5 Setting a process mean value
+
+It may be useful to establish target values for the process mean to aid in factory process control. 
+For an individual factory the targeted process mean value of a property shall be calculated in accordance with the following equations:
+
+\[ PV_L = L +K_T \sigma_B\]
+
+\[ PV_U = U -K_T \sigma_B\]
+
+where $\sigma_B$ is the standard deviation between panel means and $K_T$ depends on the target quality as follows:
+
+| Target Quality | $K_T$      |
+|:--------------:|:----------:|
+| 0.96           | 1.751      |
+| 0.97           | 1.881      |
+| 0.98           | 2.053      |
+| 0.99           | 2.326      |
+| 0.995          | 2.576      |
+
+
+#Annex A
+(informative)
+
+
+
+#### Example 1, Initial type testing, Estimated Standard Deviation.
+
+Single sampling with 16 mm IB, Lower Specification is 0.3 Mpa. 12 panels were randomly selected and four tests were conducted per panel. The results and the calculated panel means are given in the table below.
+
+```{r, results='asis', echo=FALSE}
+set.seed(200592)
+library(xtable)
+xmat <- matrix(round(rnorm(48,0.43,0.050),2),12,4)
+xmat1 <- matrix(round(rep(rnorm(12,0,0.070),each=4),2),12,4,byrow=T)
+xmat2 <- xmat+xmat1
+
+
+for (i in 1:12){
+  eval(parse(text=paste0("m",i,"<- mean(xmat2[",i,",])")))
+}
+
+
+tabmat <- cbind(xmat2,c(m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12))
+colnames(tabmat) <- c("1","2","3,","4","panel mean")
+#print(xtable(tabmat, digits=3),caption="Example 1",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+
+m <- round(mean(c(m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12)),3)
+s <- round(sd(c(m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12)),3)
+l <- round(m-1.6912*s,3)
+
+```
+
+
+The grand mean is given by `r m` while the standard deviation between panel means is given by `r s`. The 5% comparison value is then
+$$`r m`-1.691 \times `r s` = `r l`$$ which is less than 0.30 Mpa, and hence the initital type testing is not achieved.
+
+#### Example 2, Initial type testing, Estimated Standard Deviation.
+
+Single sampling with 16 mm IB, Lower Specification is 0.3 Mpa. 12 panels were randomly selected and four tests were conducted per panel. The results and the calculated panel means are given in the table below.
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+xmat <- matrix(round(rnorm(48,0.53,0.050),2),12,4)
+xmat1 <- matrix(round(rep(rnorm(12,0,0.070),each=4),2),12,4,byrow=T)
+xmat2 <- xmat+xmat1
+
+
+for (i in 1:12){
+  eval(parse(text=paste0("m",i,"<- mean(xmat2[",i,",])")))
+}
+
+
+tabmat <- cbind(xmat2,c(m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12))
+colnames(tabmat) <- c("1","2","3,","4","panel mean")
+#print(xtable(tabmat, digits=3),caption="Example 1",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+
+m <- round(mean(c(m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12)),3)
+s <- round(sd(c(m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12)),3)
+l <- round(m-1.6912*s,3)
+
+```
+
+
+The grand mean is given by `r m` while the standard deviation between panel means is given by `r s`. The 5% comparison value is then
+$$`r m`-1.691 \times `r s` = `r l`$$ which is greater than 0.30 Mpa, and hence the initital type testing is achieved.
+
+
+
+#### Example 3, Single sampling, Estimated Standard Deviation (Fails).
+
+
+Single sampling with 18 mm MOR, Lower Specification is 12 Mpa. Three panels were randomly selected and four tests were conducted per panel. The results and the calculated panel means are given in the table below.
+
+```{r, results='asis', echo=FALSE}
+set.seed(200592)
+library(xtable)
+xmat <- matrix(round(rnorm(12,15.74,1.97),1),3,4)
+xmat1 <- matrix(round(rep(rnorm(3,0,1.36),each=4),1),3,4,byrow=T)
+xmat2 <- xmat+xmat1
+m1 <- mean(xmat2[1,])
+m2 <- mean(xmat2[2,])
+m3 <- mean(xmat2[3,])
+tabmat <- cbind(xmat2,c(m1,m2,m3))
+colnames(tabmat) <- c("1","2","3,","4","panel mean")
+#print(xtable(tabmat, digits=3),caption="Example 1",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+
+m4 <- round(mean(c(m1,m2,m3)),3)
+s4 <- round(sd(c(m1,m2,m3)),3)
+l4 <- round(m4-1.939*s4,3)
+
+```
+
+
+The grand mean is given by \[\frac{`r m1`+`r m2` + `r m3`}{3}=`r m4`\]  while the standard deviation between panel means is given by \[\sqrt{\frac{(`r m1` - `r m4`)^2 + (`r m2` - `r m4`)^2 + (`r m3` - `r m4`)^2}{2}}=`r s4`.\] The 5% comparison value is then
+$$`r m4`-1.939 \times `r s4` = `r l4`$$ which is less than 12 Mpa, and hence the specification limit is not achieved.
+
+#### Example 4, Single sampling, Estimated Standard Deviation (Passes).
+
+Single sampling with 18 mm MOR, Lower Specification is 12 Mpa. Three panels were randomly selected and four tests were conducted per panel. The results and the calculated panel means are given in the table below.
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+xmat <- matrix(round(rnorm(12,18.74,1.97),1),3,4)
+xmat1 <- matrix(round(rep(rnorm(3,0,1.36),each=4),1),3,4,byrow=T)
+xmat2 <- xmat+xmat1
+m1 <- mean(xmat2[1,])
+m2 <- mean(xmat2[2,])
+m3 <- mean(xmat2[3,])
+tabmat <- cbind(xmat2,c(m1,m2,m3))
+colnames(tabmat) <- c("1","2","3,","4","panel mean")
+#print(xtable(tabmat, digits=3),caption="Example 1",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+
+m4 <- round(mean(c(m1,m2,m3)),3)
+s4 <- round(sd(c(m1,m2,m3)),3)
+l4 <- round(m4-1.939*s4,3)
+
+```
+
+
+The grand mean is given by \[\frac{`r m1`+`r m2` + `r m3`}{3}=`r m4`\] while the standard deviation between panel means is given by \[\sqrt{\frac{(`r m1` - `r m4`)^2 + (`r m2` - `r m4`)^2 + (`r m3` - `r m4`)^2}{2}}=`r s4`.\] The 5% comparison value is then
+$$`r m4`-1.939 \times `r s4` = `r l4`$$ which is greater than 12 Mpa, and hence the specification limit is achieved.
+
+#### Example 5, Single sampling, Known Standard Deviation (Passes).
+
+Single sampling with 18 mm MOR, Lower Specification is 12 Mpa. The long run standard deviation is 1.680. Three panels were randomly selected and four tests were conducted per panel. The results and the calculated panel means are given in the table below.
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+xmat <- matrix(round(rnorm(12,16.74,1.97),1),3,4)
+xmat1 <- matrix(round(rep(rnorm(3,0,1.36),each=4),1),3,4,byrow=T)
+xmat2 <- xmat+xmat1
+m1 <- mean(xmat2[1,])
+m2 <- mean(xmat2[2,])
+m3 <- mean(xmat2[3,])
+tabmat <- cbind(xmat2,c(m1,m2,m3))
+colnames(tabmat) <- c("1","2","3,","4","panel mean")
+#print(xtable(tabmat, digits=3),caption="Example 1",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+
+m4 <- round(mean(c(m1,m2,m3)),3)
+l4 <- round(m4-1.645*1.680,3)
+
+
+```
+
+
+The grand mean is given by \[\frac{`r m1`+`r m2` + `r m3`}{3}=`r m4`\] The 5% comparison value is then
+$$`r m4`-1.645 \times 1.680 = `r l4`$$ which is greater than 12 Mpa, and hence the specification limit is achieved.
+
+#### Example 6, Single sampling, Known Standard Deviation (Fails).
+
+Single sampling with 18 mm MOR, Lower Specification is 12 Mpa. The long run standard deviation is 1.680. Three panels were randomly selected and four tests were conducted per panel. The results and the calculated panel means are given in the table below.
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+xmat <- matrix(round(rnorm(12,13.74,1.97),1),3,4)
+xmat1 <- matrix(round(rep(rnorm(3,0,1.36),each=4),1),3,4,byrow=T)
+xmat2 <- xmat+xmat1
+m1 <- mean(xmat2[1,])
+m2 <- mean(xmat2[2,])
+m3 <- mean(xmat2[3,])
+tabmat <- cbind(xmat2,c(m1,m2,m3))
+colnames(tabmat) <- c("1","2","3,","4","panel mean")
+#print(xtable(tabmat, digits=3),caption="Example 1",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+
+m4 <- round(mean(c(m1,m2,m3)),3)
+l4 <- round(m4-1.645*1.680,3)
+
+
+```
+
+
+The grand mean is given by \[\frac{`r m1`+`r m2` + `r m3`}{3}=`r m4`\] The 5% comparison value is then
+$$`r m4`-1.645 \times 1.680 = `r l4`$$ which is less than 12 Mpa, and hence the specification limit is not achieved.
+
+#### Example 7, Retesting, Estimated Standard Deviation (Passes on first round).
+
+Single sampling with 25 mm IB, Lower Specification is 0.25 Mpa. Five panels were randomly selected and four tests were conducted per panel. The results and the calculated panel means are given in the table below.
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+xmat <- matrix(round(rnorm(5,0.57,0.06),2),5,4)
+xmat1 <- matrix(round(rep(rnorm(5,0,0.08),each=4),2),5,4,byrow=T)
+xmat2 <- xmat+xmat1
+m1 <- mean(xmat2[1,])
+m2 <- mean(xmat2[2,])
+m3 <- mean(xmat2[3,])
+m4 <- mean(xmat2[4,])
+m5 <- mean(xmat2[5,])
+tabmat <- cbind(xmat2,c(m1,m2,m3,m4,m5))
+colnames(tabmat) <- c("1","2","3,","4","panel mean")
+#print(xtable(tabmat, digits=3),caption="Example 1",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+
+m <- round(mean(c(m1,m2,m3,m4,m5)),3)
+s <- round(sd(c(m1,m2,m3,m4,m5)),3)
+l <- round(m4-1.960*s,3)
+
+```
+
+
+The grand mean is given by \[\frac{`r m1`+`r m2` + `r m3` + `r m4` + `r m5`}{5}=`r m`\] while the standard deviation between panel means is given by \[\sqrt{\frac{(`r m1` - `r m`)^2 + (`r m2` - `r m`)^2 + (`r m3` - `r m`)^2 + (`r m4` - `r m`)^2 + (`r m5` - `r m`)^2}{4}}=`r s`.\] The 5% comparison value is then
+$$`r m`-1.960 \times `r s` = `r l`$$ which is greater than 0.25 Mpa, and hence the specification limit is achieved.
+
+#### Example 8, Retesting, Estimated Standard Deviation (Fails first round, Passses on second round).
+
+Single sampling with 25 mm IB, Lower Specification is 0.25 Mpa. Five panels were randomly selected and four tests were conducted per panel. The results and the calculated panel means are given in the table below.
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+set.seed(010389)
+xmat <- matrix(round(rnorm(5,0.45,0.06),2),5,4)
+xmat1 <- matrix(round(rep(rnorm(5,0,0.08),each=4),2),5,4,byrow=T)
+xmat2 <- xmat+xmat1
+m1 <- mean(xmat2[1,])
+m2 <- mean(xmat2[2,])
+m3 <- mean(xmat2[3,])
+m4 <- mean(xmat2[4,])
+m5 <- mean(xmat2[5,])
+tabmat <- cbind(xmat2,c(m1,m2,m3,m4,m5))
+colnames(tabmat) <- c("1","2","3,","4","panel mean")
+#print(xtable(tabmat, digits=3),caption="Example 1",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+
+m <- round(mean(c(m1,m2,m3,m4,m5)),3)
+s <- round(sd(c(m1,m2,m3,m4,m5)),3)
+l <- round(m-1.960*s,3)
+
+```
+
+
+The grand mean is given by \[\frac{`r m1`+`r m2` + `r m3` + `r m4` + `r m5`}{5}=`r m`\] while the standard deviation between panel means is given by \[\sqrt{\frac{(`r m1` - `r m`)^2 + (`r m2` - `r m`)^2 + (`r m3` - `r m`)^2 + (`r m4` - `r m`)^2 + (`r m5` - `r m`)^2}{4}}=`r s`.\] The 5% comparison value is then
+$$`r m`-1.960 \times `r s` = `r l`$$ which is less than 0.25 Mpa, and hence the specification limit is not achieved. An additional five panels were sampled, with four tests per sample.
+
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+xmat <- matrix(round(rnorm(5,0.45,0.06),2),5,4)
+xmat1 <- matrix(round(rep(rnorm(5,0,0.08),each=4),2),5,4,byrow=T)
+xmat2 <- xmat+xmat1
+m1 <- mean(xmat2[1,])
+m2 <- mean(xmat2[2,])
+m3 <- mean(xmat2[3,])
+m4 <- mean(xmat2[4,])
+m5 <- mean(xmat2[5,])
+tabmat <- cbind(xmat2,c(m1,m2,m3,m4,m5))
+colnames(tabmat) <- c("1","2","3,","4","panel mean")
+#print(xtable(tabmat, digits=3),caption="Example 1",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+
+m2nd <- round(mean(c(m1,m2,m3,m4,m5)),3)
+s2nd <- round(sd(c(m1,m2,m3,m4,m5)),3)
+mcomb <- round((m+m2nd)/2,3)
+pooleds <- round(sqrt((s^2+s2nd^2)/2),3)
+l <- round(mcomb-1.960*pooleds,3)
+
+```
+
+The mean of the second set of tests is given by \[\frac{`r m1` + `r m2` + `r m3` + `r m4` + `r m5`}{5} = `r m2nd`\]
+while the standard deviation of the second set of tests is given by \[\sqrt{\frac{(`r m1` - `r m2nd`)^2 + (`r m2` - `r m2nd`)^2 + (`r m3` - `r m2nd`)^2 + (`r m4` - `r m2nd`)^2 + (`r m5` - `r m2nd`)^2}{4}}=`r s2nd`.\]
+The new grand mean is therefore given by \[\frac{`r m` + `r m2nd`}{2} = `r mcomb`\] while the pooled standard deviation for the two tests is give by \[\sqrt{\frac{`r s^2` + `r s2nd^2`}{2}} = `r pooleds`\]
+
+
+
+The grand mean is now given by `r mcomb` while the pooled standard deviation between panel means is given by `r pooleds`. The 5% comparison value is then
+$$`r mcomb`-1.960 \times `r pooleds` = `r l`$$ which is greater than 0.25 Mpa, and hence the specification limit is achieved. 
+
+#### Example 9, Retesting, Estimated Standard Deviation (Fails both rounds).
+
+Single sampling with 25 mm IB, Lower Specification is 0.25 Mpa. Five panels were randomly selected and four tests were conducted per panel. The results and the calculated panel means are given in the table below.
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+set.seed(060387)
+xmat <- matrix(round(rnorm(5,0.44,0.06),2),5,4)
+xmat1 <- matrix(round(rep(rnorm(5,0,0.08),each=4),2),5,4,byrow=T)
+xmat2 <- xmat+xmat1
+m1 <- mean(xmat2[1,])
+m2 <- mean(xmat2[2,])
+m3 <- mean(xmat2[3,])
+m4 <- mean(xmat2[4,])
+m5 <- mean(xmat2[5,])
+tabmat <- cbind(xmat2,c(m1,m2,m3,m4,m5))
+colnames(tabmat) <- c("1","2","3,","4","panel mean")
+#print(xtable(tabmat, digits=3),caption="Example 1",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+
+m <- round(mean(c(m1,m2,m3,m4,m5)),3)
+s <- round(sd(c(m1,m2,m3,m4,m5)),3)
+l <- round(m-1.960*s,3)
+
+```
+
+
+The grand mean is given by \[\frac{`r m1`+`r m2` + `r m3` + `r m4` + `r m5`}{5}=`r m`\] while the standard deviation between panel means is given by \[\sqrt{\frac{(`r m1` - `r m`)^2 + (`r m2` - `r m`)^2 + (`r m3` - `r m`)^2 + (`r m4` - `r m`)^2 + (`r m5` - `r m`)^2}{4}}=`r s`.\] The 5% comparison value is then
+$$`r m`-1.960 \times `r s` = `r l`$$ which is less than 0.25 Mpa, and hence the specification limit is not achieved. An additional five panels were sampled, with four tests per sample.
+
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+xmat <- matrix(round(rnorm(5,0.44,0.06),2),5,4)
+xmat1 <- matrix(round(rep(rnorm(5,0,0.08),each=4),2),5,4,byrow=T)
+xmat2 <- xmat+xmat1
+m1 <- mean(xmat2[1,])
+m2 <- mean(xmat2[2,])
+m3 <- mean(xmat2[3,])
+m4 <- mean(xmat2[4,])
+m5 <- mean(xmat2[5,])
+tabmat <- cbind(xmat2,c(m1,m2,m3,m4,m5))
+colnames(tabmat) <- c("1","2","3,","4","panel mean")
+#print(xtable(tabmat, digits=3),caption="Example 1",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+
+m2nd <- round(mean(c(m1,m2,m3,m4,m5)),3)
+s2nd <- round(sd(c(m1,m2,m3,m4,m5)),3)
+mcomb <- round((m+m2nd)/2,3)
+pooleds <- round(sqrt((s^2+s2nd^2)/2),3)
+l <- round(mcomb-1.960*pooleds,3)
+
+```
+
+The  mean of the second set of tests is given by \[\frac{`r m1` + `r m2` + `r m3` + `r m4` + `r m5`}{5} = `r m2nd`\]
+while the standard deviation of the second set of tests is given by \[\sqrt{\frac{(`r m1` - `r m2nd`)^2 + (`r m2` - `r m2nd`)^2 + (`r m3` - `r m2nd`)^2 + (`r m4` - `r m2nd`)^2 + (`r m5` - `r m2nd`)^2}{4}}=`r s2nd`.\]
+The new grand mean is therefore given by \[\frac{`r m` + `r m2nd`}{2} = `r mcomb`\] while the pooled standard deviation for the two tests is give by \[\sqrt{\frac{`r s^2` + `r s2nd^2`}{2}} = `r pooleds`\]
+
+
+The grand mean is now given by `r mcomb` while the pooled standard deviation between panel means is given by `r pooleds`. The 5% comparison value is then
+$$`r mcomb`-1.960 \times `r pooleds` = `r l`$$ which is less than 0.25 Mpa, and hence the specification limit is not achieved. 
+
+
+
+
+#### Example 10, Retesting, Known Standard Deviation (Passes on first round).
+
+Double sampling with 12 mm IB, Lower Specification is 0.35 Mpa. The long run standard deviation is 0.085. Five panels were randomly selected and four tests were conducted per panel. The results and the calculated panel means are given in the table below.
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+xmat <- matrix(round(rnorm(5,0.56,0.06),2),5,4)
+xmat1 <- matrix(round(rep(rnorm(5,0,0.08),each=4),2),5,4,byrow=T)
+xmat2 <- xmat+xmat1
+m1 <- mean(xmat2[1,])
+m2 <- mean(xmat2[2,])
+m3 <- mean(xmat2[3,])
+m4 <- mean(xmat2[4,])
+m5 <- mean(xmat2[5,])
+tabmat <- cbind(xmat2,c(m1,m2,m3,m4,m5))
+colnames(tabmat) <- c("1","2","3,","4","panel mean")
+#print(xtable(tabmat, digits=3),caption="Example 10",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+
+m <- round(mean(c(m1,m2,m3,m4,m5)),3)
+s <- round(sd(c(m1,m2,m3,m4,m5)),3)
+l <- round(m4-1.758*s,3)
+
+```
+
+
+The grand mean is given by \[\frac{`r m1`+`r m2` + `r m3` + `r m4` + `r m5`}{5}=`r m`\] while the standard deviation between panel means is given by \[\sqrt{\frac{(`r m1` - `r m`)^2 + (`r m2` - `r m`)^2 + (`r m3` - `r m`)^2 + (`r m4` - `r m`)^2 + (`r m5` - `r m`)^2}{4}}=`r s`.\] The 5% comparison value is then
+$$`r m`-1.758 \times `r s` = `r l`$$ which is greater than 0.35 Mpa, and hence the specification limit is achieved.
+
+#### Example 11, Retesting, Known Standard Deviation (Fails first round, Passses on second round).
+
+Double sampling with 12 mm IB, Lower Specification is 0.35 Mpa. The long run standard deviation is 0.085. Five panels were randomly selected and four tests were conducted per panel. The results and the calculated panel means are given in the table below.
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+set.seed(070285)
+xmat <- matrix(round(rnorm(5,0.5,0.06),2),5,4)
+xmat1 <- matrix(round(rep(rnorm(5,0,0.08),each=4),2),5,4,byrow=T)
+xmat2 <- xmat+xmat1
+m1 <- mean(xmat2[1,])
+m2 <- mean(xmat2[2,])
+m3 <- mean(xmat2[3,])
+m4 <- mean(xmat2[4,])
+m5 <- mean(xmat2[5,])
+tabmat <- cbind(xmat2,c(m1,m2,m3,m4,m5))
+colnames(tabmat) <- c("1","2","3,","4","panel mean")
+#print(xtable(tabmat, digits=3),caption="Example 11",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+
+m <- round(mean(c(m1,m2,m3,m4,m5)),3)
+
+l <- round(m-1.758*0.085,3)
+
+```
+
+
+The grand mean is given by \[\frac{`r m1`+`r m2` + `r m3` + `r m4` + `r m5`}{5}=`r m`\] while the standard deviation between panel means is given by \[\sqrt{\frac{(`r m1` - `r m`)^2 + (`r m2` - `r m`)^2 + (`r m3` - `r m`)^2 + (`r m4` - `r m`)^2 + (`r m5` - `r m`)^2}{4}}=`r s`.\] The 5% comparison value is then
+$$`r m`-1.758 \times `r 0.085` = `r l`$$ which is less than 0.35 Mpa, and hence the specification limit is not achieved. An additional five panels were sampled, with four tests per sample.
+
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+xmat <- matrix(round(rnorm(5,0.5,0.06),2),5,4)
+xmat1 <- matrix(round(rep(rnorm(5,0,0.08),each=4),2),5,4,byrow=T)
+xmat2 <- xmat+xmat1
+m1 <- mean(xmat2[1,])
+m2 <- mean(xmat2[2,])
+m3 <- mean(xmat2[3,])
+m4 <- mean(xmat2[4,])
+m5 <- mean(xmat2[5,])
+tabmat <- cbind(xmat2,c(m1,m2,m3,m4,m5))
+colnames(tabmat) <- c("1","2","3,","4","panel mean")
+#print(xtable(tabmat, digits=3),caption="Example 11",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+
+m2nd <- round(mean(c(m1,m2,m3,m4,m5)),3)
+
+mcomb <- round((m+m2nd)/2,3)
+pooleds <- 0.085
+l <- round(mcomb-1.758*pooleds,3)
+
+```
+
+The  mean of the second set of tests is given by \[\frac{`r m1` + `r m2` + `r m3` + `r m4` + `r m5`}{5} = `r m2nd`\]
+
+The new grand mean is therefore given by \[\frac{`r m` + `r m2nd`}{2} = `r mcomb`\] while the standard deviation remains as `r pooleds`. 
+
+
+The grand mean is now given by `r mcomb` while the pooled standard deviation between panel means is given by `r pooleds`. The 5% comparison value is then
+$$`r mcomb`-1.758 \times `r pooleds` = `r l`$$ which is greater than 0.35 Mpa, and hence the specification limit is achieved. 
+
+#### Example 12, Retesting, Known Standard Deviation (Fails both rounds).
+
+Double sampling with 12 mm IB, Lower Specification is 0.35 Mpa. The long run standard deviation is 0.085. Five panels were randomly selected and four tests were conducted per panel. The results and the calculated panel means are given in the table below.
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+xmat <- matrix(round(rnorm(5,0.36,0.06),2),5,4)
+xmat1 <- matrix(round(rep(rnorm(5,0,0.08),each=4),2),5,4,byrow=T)
+xmat2 <- xmat+xmat1
+m1 <- mean(xmat2[1,])
+m2 <- mean(xmat2[2,])
+m3 <- mean(xmat2[3,])
+m4 <- mean(xmat2[4,])
+m5 <- mean(xmat2[5,])
+tabmat <- cbind(xmat2,c(m1,m2,m3,m4,m5))
+colnames(tabmat) <- c("1","2","3,","4","panel mean")
+#print(xtable(tabmat, digits=3),caption="Example 12",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+
+m <- round(mean(c(m1,m2,m3,m4,m5)),3)
+s <- 0.085
+l <- round(m-1.758*s,3)
+
+```
+
+
+The grand mean is given by \[\frac{`r m1`+`r m2` + `r m3` + `r m4` + `r m5`}{5}=`r m`\] while the standard deviation between panel means is given by \[\sqrt{\frac{(`r m1` - `r m`)^2 + (`r m2` - `r m`)^2 + (`r m3` - `r m`)^2 + (`r m4` - `r m`)^2 + (`r m5` - `r m`)^2}{4}}=`r s`.\] The 5% comparison value is then
+$$`r m`-1.758 \times `r s` = `r l`$$ which is less than 0.35 Mpa, and hence the specification limit is not achieved. An additional five panels were sampled, with four tests per sample.
+
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+xmat <- matrix(round(rnorm(5,0.36,0.06),2),5,4)
+xmat1 <- matrix(round(rep(rnorm(5,0,0.08),each=4),2),5,4,byrow=T)
+xmat2 <- xmat+xmat1
+m1 <- mean(xmat2[1,])
+m2 <- mean(xmat2[2,])
+m3 <- mean(xmat2[3,])
+m4 <- mean(xmat2[4,])
+m5 <- mean(xmat2[5,])
+tabmat <- cbind(xmat2,c(m1,m2,m3,m4,m5))
+colnames(tabmat) <- c("1","2","3,","4","panel mean")
+#print(xtable(tabmat, digits=3),caption="Example 1",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+
+m2nd <- round(mean(c(m1,m2,m3,m4,m5)),3)
+
+mcomb <- round((m+m2nd)/2,3)
+pooleds <- 0.085
+l <- round(mcomb-1.758*pooleds,3)
+
+```
+
+
+The  mean of the second set of tests is given by \[\frac{`r m1` + `r m2` + `r m3` + `r m4` + `r m5`}{5} = `r m2nd`\]
+
+The new grand mean is therefore given by \[\frac{`r m` + `r m2nd`}{2} = `r mcomb`\] while the standard deviation remains as `r pooleds`. 
+
+
+
+
+
+The grand mean is now given by `r mcomb` while the pooled standard deviation between panel means is given by `r pooleds`. The 5% comparison value is then
+$$`r mcomb`-1.758 \times `r pooleds` = `r l`$$ which is less than 0.35 Mpa, and hence the specification limit is not achieved. 
+
+####Example 13, Rolling Std Deviation and Continuous Testing
+
+Using rolling std deviation with 16 mm IB, Lower Specification is 0.30 Mpa. Four samples are planned during the production run with four tests per board and retesting is allowed. The $k$ value is 1.127. The table below gives the last 30 test panels for this product, with corresponding panel means.
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+set.seed(200592)
+invisible(sqrt((0.07^2+0.05^2)*sqrt(rchisq(1,29)/29)))
+
+xmat <- matrix(rnorm(120, 0.47, 0.05),30,4)
+bmat <- matrix(rep(rnorm(30,0,0.07),each=4),30,4,byrow=T)
+ymat <- round((xmat+bmat),3)
+
+xmat1 <- matrix(rnorm(32, 0.47, 0.05),8,4)
+
+bmat1 <- matrix(rep(rnorm(8,0,0.07),each=4),8,4,byrow=T)
+
+ymat1 <- round((xmat1+bmat1),3)
+
+
+
+
+
+
+
+tabmat <- cbind(ymat,round(rowMeans(ymat),3))
+colnames(tabmat) <- c("1","2","3","4","panel mean")
+#print(xtable(tabmat,digits=3),caption="Example 13",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+gm0 <- round(mean(tabmat[,5]),3)
+gs0 <- round(sd(tabmat[,5]),3)
+
+
+```
+
+The grand mean of the last 30 panel means is `r gm0`, while the stand deviation of the last 30 panel means is `r gs0`.
+
+The results of the first panel of the curent production run are:
+
+```{r, results='asis', echo=FALSE}
+tabmat1 <- cbind(ymat1,round(rowMeans(ymat1),3))[1,, drop=FALSE]
+colnames(tabmat1) <- c("1","2","3","4","panel mean")
+#print(xtable(tabmat1,digits=3),caption="Example 13",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html",digits=3)
+pander(tabmat1)
+
+compval1 <- round(tabmat1[1,5]-1.127*gs0,3)
+gm1 <- round(gm0+(tabmat1[1,5]-mean(ymat[1,]))/30,3)
+gs1 <- round(sqrt(gs0^2+(tabmat1[1,5]-mean(ymat[1,]))*(tabmat1[1,5]-gm1+mean(ymat[1,])-gm0)/29),3)
+
+```
+
+Since \[`r tabmat1[1,5]`-1.127\times`r gs0`=`r compval1`>0.30,\]
+the standard criteria is achieved and the production can proceed.
+
+The updated mean is 
+\[ `r gm0` + \frac{`r tabmat1[1,5]`-`r round(mean(ymat[1,]),3)`}{30}=`r gm1`,\]
+and the updated standard deviation is
+\[ \sqrt{`r gs0`^2+ \frac{(`r tabmat1[1,5]`-`r round(mean(ymat[1,]),3)`)\times(`r tabmat1[1,5]`-
+`r gm1`+`r round(mean(ymat[1,]),3)`-`r gm0`)}{29}}=`r gs1`\]
+
+
+
+The results of the second panel of the curent production run are:
+
+```{r, results='asis', echo=FALSE}
+tabmat2 <- cbind(ymat1,round(rowMeans(ymat1),3))[2,, drop=FALSE]
+colnames(tabmat2) <- c("1","2","3","4","panel mean")
+#print(xtable(tabmat2,digits=3),caption="Example 13",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html",digits=3)
+pander(tabmat)
+
+compval2 <- round(tabmat2[1,5]-1.127*gs1,3)
+gm2 <- round(gm1+(tabmat2[1,5]-mean(ymat[2,]))/30,3)
+gs2 <- round(sqrt(gs1^2+(tabmat2[1,5]-mean(ymat[2,]))*(tabmat2[1,5]-gm2+mean(ymat[2,])-gm1)/29),3)
+
+```
+
+
+Since \[`r tabmat2[1,5]`-1.127\times`r gs1`=`r compval2`>0.30,\]
+the standard criteria is achieved and the production can proceed.
+
+The updated mean is 
+\[ `r gm1` + \frac{`r tabmat2[1,5]`-`r round(mean(ymat[2,]),3)`}{30}=`r gm2`,\]
+and the updated standard deviation is
+\[ \sqrt{`r gs1`^2+ \frac{(`r tabmat2[1,5]`-`r round(mean(ymat[2,]),3)`)\times(`r tabmat2[1,5]`-
+`r gm2`+`r round(mean(ymat[2,]),3)`-`r gm1`)}{29}}=`r gs2`\]
+
+
+The results of the third panel of the curent production run are:
+
+```{r, results='asis', echo=FALSE}
+tabmat3 <- cbind(ymat1,round(rowMeans(ymat1),3))[3,, drop=FALSE]
+colnames(tabmat3) <- c("1","2","3","4","panel mean")
+#print(xtable(tabmat3,digits=3),caption="Example 13",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html",digits=3)
+pander(tabmat3)
+
+compval3 <- round(tabmat3[1,5]-1.127*gs2,3)
+gm3 <- round(gm2+(tabmat3[1,5]-mean(ymat[3,]))/30,3)
+gs3 <- round(sqrt(gs2^2+(tabmat3[1,5]-mean(ymat[3,]))*(tabmat3[1,5]-gm3+mean(ymat[3,])-gm2)/29),3)
+```
+
+Since \[`r tabmat3[1,5]`-1.127\times`r gs2`=`r compval3`>0.30,\]
+the standard criteria is achieved and the production can proceed.
+
+The updated mean is 
+\[ `r gm2` + \frac{`r tabmat3[1,5]`-`r round(mean(ymat[3,]),3)`}{30}=`r gm3`,\]
+and the updated standard deviation is
+\[ \sqrt{`r gs2`^2+ \frac{(`r tabmat3[1,5]`-`r round(mean(ymat[3,]),3)`)\times(`r tabmat3[1,5]`-
+`r gm3`+`r round(mean(ymat[3,]),3)`-`r gm2`)}{29}}=`r gs3`\]
+
+The results of the fourth panel of the curent production run are:
+
+```{r, results='asis', echo=FALSE}
+tabmat4 <- cbind(ymat1,round(rowMeans(ymat1),3))[4,, drop=FALSE]
+colnames(tabmat4) <- c("1","2","3","4","panel mean")
+#print(xtable(tabmat4,digits=3),caption="Example 13",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html",digits=3)
+pander(tabmat4)
+
+compval4 <- round(tabmat4[1,5]-1.127*gs3,3)
+
+```
+
+Since \[`r tabmat4[1,5]`-1.127\times`r gs3`=`r compval4`<0.30,\]
+the standard criteria is not achieved and another panel needs to be tested.
+
+The results of the retesting for the fourth panel of the curent production run are:
+
+```{r, results='asis', echo=FALSE}
+tabmat5 <- cbind(ymat1,round(rowMeans(ymat1),3))[5,, drop=FALSE]
+colnames(tabmat5) <- c("1","2","3","4","panel mean")
+#print(xtable(tabmat5,digits=3),caption="Example 13",align=rep("c",6),caption.placement="top",
+#      include.rownames=F, type="html",digits=3)
+pander(tabmat5)
+
+gmean <- round((round(tabmat[1,5],3)+round(tabmat5[1,5],3))/2,3)
+
+compval4A <- round(gmean-1.127*gs3,3)
+gm4 <- round(gm3+(tabmat4[1,5]-mean(ymat[4,]))/30,3)
+gs4 <- round(sqrt(gs3^2+(tabmat4[1,5]-mean(ymat[4,]))*(tabmat4[1,5]-gm4+mean(ymat[4,])-gm3)/29),3)
+
+gm5 <- round(gm4+(tabmat5[1,5]-mean(ymat[5,]))/30,3)
+gs5 <- round(sqrt(gs4^2+(tabmat5[1,5]-mean(ymat[5,]))*(tabmat5[1,5]-gm5+mean(ymat[5,])-gm4)/29),3)
+```
+
+The grand mean of the two panel means is given by \[\frac{`r round(tabmat4[1,5],3)`+`r round(tabmat5[1,5],3)`}{2}=`r gmean`\]
+Since \[`r gmean`-1.127\times`r gs3`=`r compval4A`> 0.30,\]
+the standard criteria is achieved and the production does not need to be downgraded.
+
+Two sets of updates need to be applied. 
+
+The first updated mean is 
+\[ `r gm3` + \frac{`r tabmat4[1,5]`-`r round(mean(ymat[4,]),3)`}{30}=`r gm4`,\]
+and the first updated standard deviation is
+\[ \sqrt{`r gs3`^2+ \frac{(`r tabmat4[1,5]`-`r round(mean(ymat[4,]),3)`)\times(`r tabmat4[1,5]`-
+`r gm4`+`r round(mean(ymat[4,]),3)`-`r gm3`)}{29}}=`r gs4`\]
+
+The second updated mean is 
+\[ `r gm4` + \frac{`r tabmat5[1,5]`-`r round(mean(ymat[5,]),3)`}{30}=`r gm5`,\]
+and the second updated standard deviation is
+\[ \sqrt{`r gs4`^2+ \frac{(`r tabmat5[1,5]`-`r round(mean(ymat[5,]),3)`)\times(`r tabmat5[1,5]`-
+`r gm5`+`r round(mean(ymat[5,]),3)`-`r gm4`)}{29}}=`r gs5`\]
+
+####Example 14, Rolling Std Deviation and Continuous Testing
+
+Using rolling std deviation with 18 mm MOR, Lower Specification is 12 Mpa. Five samples are planned during the production run with two tests per board and retesting is allowed. The $k$ value is 1.4. The table below gives the last 30 test panels for this product, with corresponding panel means.
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+set.seed(01031989)
+invisible(sqrt((0.07^2+0.05^2)*sqrt(rchisq(1,29)/29)))
+
+xmat <- matrix(rnorm(60, 13.5, 1.97),30,2)
+bmat <- matrix(rep(rnorm(30,0,1.36),each=2),30,2,byrow=T)
+ymat <- round((xmat+bmat),3)
+
+xmat1 <- matrix(rnorm(20, 13.5, 1.97),10,2)
+
+bmat1 <- matrix(rep(rnorm(10,0,1.36),each=2),10,2,byrow=T)
+
+ymat1 <- round((xmat1+bmat1),3)
+
+tabmat <- cbind(ymat,round(rowMeans(ymat),3))
+colnames(tabmat) <- c("1","2","panel mean")
+#print(xtable(tabmat,digits=3),caption="Example 14",align=rep("c",4),caption.placement="top",
+#      include.rownames=F, type="html")
+pander(tabmat)
+gm0 <- round(mean(tabmat[,3]),3)
+gs0 <- round(sd(tabmat[,3]),3)
+
+
+
+```
+
+The grand mean of the last 30 panel means is `r gm0`, while the standard deviation of the last 30 panel means is `r gs0`.
+
+The results of the first panel of the current production run are:
+
+```{r, results='asis', echo=FALSE}
+
+tabmat1 <- cbind(ymat1,round(rowMeans(ymat1),3))[1,, drop=FALSE]
+colnames(tabmat1) <- c("1","2","panel mean")
+#print(xtable(tabmat1,digits=3),caption="Example 14",align=rep("c",4),caption.placement="top",
+#      include.rownames=F, type="html",digits=3)
+pander(tabmat1)
+
+compval1 <- round(tabmat1[1,3]-1.4*gs0,3)
+gm1 <- round(gm0+(tabmat1[1,3]-mean(ymat[1,]))/30,3)
+gs1 <- round(sqrt(gs0^2+(tabmat1[1,3]-mean(ymat[1,]))*(tabmat1[1,3]-gm1+mean(ymat[1,])-gm0)/29),3)
+
+
+```
+
+Since \[`r tabmat1[1,3]`-1.4\times`r gs0`=`r compval1`>12,\]
+the standard criteria is achieved and the production can proceed.
+
+The updated mean is 
+\[ `r gm0` + \frac{`r tabmat1[1,3]`-`r round(mean(ymat[1,]),3)`}{30}=`r gm1`,\]
+and the updated standard deviation is
+\[ \sqrt{`r gs0`^2+ \frac{(`r tabmat1[1,3]`-`r round(mean(ymat[1,]),3)`)\times(`r tabmat1[1,3]`-
+`r gm1`+`r round(mean(ymat[1,]),3)`-`r gm0`)}{29}}=`r gs1`\]
+
+The results of the second panel of the current production run are:
+  
+```{r, results='asis', echo=FALSE}
+tabmat2 <- cbind(ymat1,round(rowMeans(ymat1),3))[2,, drop=FALSE]
+colnames(tabmat2) <- c("1","2","panel mean")
+#print(xtable(tabmat2,digits=3),caption="Example 14",align=rep("c",4),caption.placement="top",
+#      include.rownames=F, type="html",digits=3)
+pander(tabmat2)
+
+compval2 <- round(tabmat2[1,3]-1.4*gs1,3)
+gm2 <- round(gm1+(tabmat2[1,3]-mean(ymat[2,]))/30,3)
+gs2 <- round(sqrt(gs1^2+(tabmat2[1,3]-mean(ymat[2,]))*(tabmat2[1,3]-gm2+mean(ymat[2,])-gm1)/29),3)
+
+```
+
+
+Since \[`r tabmat2[1,3]`-1.4\times`r gs1`=`r compval2`<12,\]
+the standard criteria is not achieved and another panel needs to be tested.
+
+The results of the retesting for the second panel of the current production run are:
+  
+```{r, results='asis', echo=FALSE}
+tabmat3 <- cbind(ymat1,round(rowMeans(ymat1),3))[3,, drop=FALSE]
+colnames(tabmat3) <- c("1","2","panel mean")
+#print(xtable(tabmat3,digits=3),caption="Example 14",align=rep("c",4),caption.placement="top",
+#      include.rownames=F, type="html",digits=3)
+pander(tabmat3)
+
+gmean <- round((round(tabmat2[1,3],3)+round(tabmat3[1,3],3))/2,3)
+
+compval2A <- round(gmean-1.4*gs1,3)
+
+
+
+```
+
+The grand mean of the two panel means is given by \[\frac{`r round(tabmat2[1,3],3)`+`r round(tabmat3[1,3],3)`}{2}=`r gmean`\]
+Since \[`r gmean`-1.4\times`r gs1`=`r compval2A`< 12,\]
+the standard criteria is not achieved and the production needs to be downgraded. No updating of the rolling mean or rolling standard deviation should be applied at this stage.
+
+The results of the third panel of the current production run are:
+  
+```{r, results='asis', echo=FALSE}
+tabmat4 <- cbind(ymat1,round(rowMeans(ymat1),3))[4,, drop=FALSE]+4.5
+colnames(tabmat4) <- c("1","2","panel mean")
+#print(xtable(tabmat4,digits=3),caption="Example 14",align=rep("c",4),caption.placement="top",
+#     include.rownames=F, type="html",digits=3)
+pander(tabmat4)
+
+compval3 <- round(tabmat4[1,3]-1.4*gs1,3)
+gm3 <- round(gm1+(tabmat4[1,3]-mean(ymat[3,]))/30,3)
+gs3 <- round(sqrt(gs1^2+(tabmat4[1,3]-mean(ymat[3,]))*(tabmat4[1,3]-gm3+mean(ymat[3,])-gm1)/29),3)
+
+```
+
+
+Since \[`r tabmat4[1,3]`-1.4\times`r gs1`=`r compval3`>12,\]
+the standard criteria is achieved and the production can proceed.
+
+The updated mean is 
+\[ `r gm1` + \frac{`r tabmat4[1,3]`-`r round(mean(ymat[3,]),3)`}{30}=`r gm3`,\]
+and the updated standard deviation is
+\[ \sqrt{`r gs1`^2+ \frac{(`r tabmat4[1,3]`-`r round(mean(ymat[3,]),3)`)\times(`r tabmat4[1,3]`-
+`r gm3`+`r round(mean(ymat[3,]),3)`-`r gm1`)}{29}}=`r gs3`\]
+
+The results of the fourth panel of the current production run are:
+  
+```{r, results='asis', echo=FALSE}
+tabmat5 <- cbind(ymat1,round(rowMeans(ymat1),3))[5,, drop=FALSE]+2.5
+colnames(tabmat5) <- c("1","2","panel mean")
+#print(xtable(tabmat5,digits=3),caption="Example 14",align=rep("c",4),caption.placement="top",
+#      include.rownames=F, type="html",digits=3)
+pander(tabmat5)
+
+compval4 <- round(tabmat5[1,3]-1.4*gs3,3)
+gm4 <- round(gm3+(tabmat5[1,3]-mean(ymat[4,]))/30,3)
+gs4 <- round(sqrt(gs3^2+(tabmat5[1,3]-mean(ymat[4,]))*(tabmat5[1,3]-gm4+mean(ymat[4,])-gm3)/29),3)
+
+```
+
+
+Since \[`r tabmat5[1,3]`-1.4\times`r gs3`=`r compval4`<12,\]
+the standard criteria is not achieved and another panel needs to be tested.
+
+The results of the retesting for the fourth panel of the current production run are:
+  
+```{r, results='asis', echo=FALSE}
+tabmat6 <- cbind(ymat1,round(rowMeans(ymat1),3))[6,, drop=FALSE]+5.9
+colnames(tabmat6) <- c("1","2","panel mean")
+#print(xtable(tabmat6,digits=3),caption="Example 14",align=rep("c",4),caption.placement="top",
+#      include.rownames=F, type="html",digits=3)
+pander(tabmat6)
+
+gmean <- round((round(tabmat5[1,3],3)+round(tabmat6[1,3],3))/2,3)
+
+compval4A <- round(gmean-1.4*gs3,3)
+
+gm5 <- round(gm4+(tabmat6[1,3]-mean(ymat[5,]))/30,3)
+gs5 <- round(sqrt(gs4^2+(tabmat6[1,3]-mean(ymat[5,]))*(tabmat6[1,3]-gm5+mean(ymat[5,])-gm4)/29),3)
+
+```
+
+The grand mean of the two panel means is given by \[\frac{`r round(tabmat5[1,3],3)`+`r round(tabmat6[1,3],3)`}{2}=`r gmean`\]
+Since \[`r gmean`-1.4\times`r gs3`=`r compval4A`> 12,\]
+the standard criteria is achieved and the production does not need to be downgraded. Two sets of updates need to be applied. 
+
+The first updated mean is 
+\[ `r gm3` + \frac{`r tabmat5[1,3]`-`r round(mean(ymat[5,]),3)`}{30}=`r gm4`,\]
+and the first updated standard deviation is
+\[ \sqrt{`r gs3`^2+ \frac{(`r tabmat5[1,3]`-`r round(mean(ymat[5,]),3)`)\times(`r tabmat5[1,3]`-
+`r gm4`+`r round(mean(ymat[5,]),3)`-`r gm3`)}{29}}=`r gs4`\]
+
+The second updated mean is 
+\[ `r gm4` + \frac{`r tabmat6[1,3]`-`r round(mean(ymat[6,]),3)`}{30}=`r gm5`,\]
+and the second updated standard deviation is
+\[ \sqrt{`r gs4`^2+ \frac{(`r tabmat6[1,3]`-`r round(mean(ymat[6,]),3)`)\times(`r tabmat6[1,3]`-
+`r gm5`+`r round(mean(ymat[6,]),3)`-`r gm4`)}{29}}=`r gs5`\]
+
+
+The results of the fifth panel of the current production run are:
+  
+```{r, results='asis', echo=FALSE}
+tabmat7 <- cbind(ymat1,round(rowMeans(ymat1),3))[7,, drop=FALSE]+4.5
+colnames(tabmat7) <- c("1","2","panel mean")
+#print(xtable(tabmat7,digits=3),caption="Example 14",align=rep("c",4),caption.placement="top",
+#      include.rownames=F, type="html",digits=3)
+pander(tabmat7)
+
+compval7 <- round(tabmat7[1,3]-1.4*gs5,3)
+gm6 <- round(gm1+(tabmat7[1,3]-mean(ymat[6,]))/30,3)
+gs6 <- round(sqrt(gs5^2+(tabmat7[1,3]-mean(ymat[6,]))*(tabmat7[1,3]-gm6+mean(ymat[6,])-gm5)/29),3)
+
+```
+
+
+Since \[`r tabmat7[1,3]`-1.4\times`r gs5`=`r compval7`>12,\]
+the standard criteria is achieved and the production can proceed.
+
+The updated mean is 
+\[ `r gm5` + \frac{`r tabmat7[1,3]`-`r round(mean(ymat[6,]),3)`}{30}=`r gm6`,\]
+and the updated standard deviation is
+\[ \sqrt{`r gs5`^2+ \frac{(`r tabmat7[1,3]`-`r round(mean(ymat[6,]),3)`)\times(`r tabmat7[1,3]`-
+`r gm6`+`r round(mean(ymat[6,]),3)`-`r gm5`)}{29}}=`r gs6`\]
+
+
+###Example 15: Monitoring of Standard Deviation
+
+16 mm IB, Specification 0.30 Mpa. The panel means for 30 batchs of product are given below, together with the overall mean per batch, the standard deviation for each batch, and the control limits.
+
+```{r, echo=FALSE}
+set.seed(020256)
+nb <- sample(3:6,30,prob=dpois(3:6,3)/(ppois(6,3)-ppois(2,3)),replace=T)
+sigmap <- sqrt(0.07^2+0.05^2/4)
+panelmeans <- round(rnorm(sum(nb),0.53,sigmap),3)
+
+myres <- matrix(NA,30,12)
+myres[,1] <- 1:30
+myres[,2] <- nb
+count <- 0
+for (i in 1:30){
+  for (j in 1:nb[i]){
+    count <- count+1
+    myres[i,j+2] <- panelmeans[count]
+  }  
+}
+
+myres[,9] <- round(apply(myres[,3:8], 1, "mean", na.rm=T),3)
+myres[,10] <- round(apply(myres[,3:8], 1, "sd", na.rm=T),3)
+
+sigma0 <- round(sqrt(sum((myres[1:20,2]-1)*myres[1:20,10]^2)/sum(myres[1:20,2]-1)), 3)
+
+myres[,11] <- round(limits[nb-1,2]*sigma0, 3)
+myres[,12] <- round(limits[nb-1,3]*sigma0, 3)
+
+myres <- cbind(myres[,1:8],myres[,1],myres[,9:12])
+
+myres[is.na(myres)] <- ""
+
+```
+
+
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+colnames(myres) <- c("Batch","nb","PM1","PM2","PM3","PM4","PM5","PM6",
+                      "Batch ","Batch Mean","Batch SD","LCL","UCL")
+#print(xtable(myres, digits=c(0,0,0,rep(3,10)), align=rep("c",13)), type="html",include.rownames=F,
+#      align=rep("c",13))
+pander(myres, split.table=80)
+
+```
+
+The average standard deviation, based on the first 20 batches, is calculated as `r sigma0`. The control chart is given below. All points are within the control limits so the process is judged to be in statistical control.
+
+```{r, echo=FALSE}
+plot(as.numeric(myres[,11]), ylim=c(0,0.2), type="b",las=1, xlab="Batch", ylab="Between Panel Means SD")
+abline(h=sigma0,lty=2)
+segments(seq(0.5,29.5,1),as.numeric(myres[,12]),seq(1.5,30.5,1),as.numeric(myres[,12]))
+segments(seq(0.5,29.5,1),as.numeric(myres[,13]),seq(1.5,30.5,1),as.numeric(myres[,13]))
+
+```
+
+The standardised control chart is given below.
+
+```{r echo=FALSE}
+
+plot(qnorm(pchisq(as.numeric(myres[,11])^2*(as.numeric(myres[,2])-1)/sigma0^2,as.numeric(myres[,2])-1)),ylim=c(-3.2,3.2),
+     type="b",las=1,xlab="Batch",ylab="Transformed Panel Means SD")
+abline(h=c(-3,0,3),lty=c(2,1,1))
+
+```
+

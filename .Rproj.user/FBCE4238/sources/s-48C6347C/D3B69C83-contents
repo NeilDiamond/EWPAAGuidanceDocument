@@ -1,0 +1,164 @@
+# Initial type testing (ITT) 
+
+## General 
+
+Initial type testing shall be performed at the beginning of the production of a new product type. Initial type testing shall be performed according to this standard where demonstration of compliance is required except where tests were previously preformed in accordance with the provisions of these standards (i.e. same product, same characteristic(s), test method, sampling procedure, system of conformity, etc.). In this case previous data can be used.
+
+
+
+## Initial type testing by variables 
+
+### General 
+
+In general, the requirements of the panel properties are fulfilled if at least 95 % of the panel means for each 
+characteristic are above the lower L or below the upper U specification limit respectively. 
+NOTE For examples, see Annex A. 
+
+Where non-standard test methods are utilised the value of the test results should be adjusted by a factor based on linear correlations between the two methods as outlined in Appendix E of EN 326-2:2010.
+
+### Sampling of panels 
+The initial type testing shall comprise panels from not less than three production shifts. 
+The minimum number of panels in the initial type testing sample $n_{ITT}$ of a factory production is 12 panels per 
+product type with at least two panels from each production line. 
+The minimum number of panels may be reduced to 6, if the product properties can be documented from 
+internal records of at least 12 tested panels in the start up period. 
+
+The number of test pieces selected for each test shall be in accordance with AS/NZS…… or with agreement from the certifying body.
+
+
+### Evaluation 
+
+#### Evaluation by using the test results directly 
+
+##### Compliance of the ITT sample 
+
+
+
+#### Evaluation by using the test results directly 
+
+##### Compliance of the ITT sample 
+Calculate the mean value $\bar{x}_{ITT,j}$ for each panel, the grand mean value $\bar{\bar{x}}_{ITT}$ the panels and, the standard deviation between the panels $S_{\bar{x},ITT}$ for each relevant characteristic in accordance with Equations (1) and (2): 
+
+\[\bar{\bar{x}}_{ITT} = \frac{\sum_{j=1}^{j=n_{ITT}}\bar{x}_{ITT,j}}{n_{ITT}}\]
+(1)
+
+and 
+\[s_{\bar{x},ITT}=\sqrt{\frac{\sum_{j=1}^{j=n_{ITT}}(\bar{x}_{ITT,j}-\bar{\bar{x}})^2}{(n_{ITT}-1)}}\]
+(2)
+
+To fulfil the specification requirement the lower 5 % value or upper 95 % value shall be higher than or equal to 
+the lower specification limit L or lower than or equal to the upper specification limit V respectively, when 
+calculated according to the Equation (3) or (4), respectively: 
+
+
+\[L_{5\%}=\bar{\bar{x}}-k_{n_{ITT}} \times s_{\bar{x},ITT}\]
+(3)
+or
+
+\[U_{95\%} = \bar{\bar{x}}_{ITT} + k_{n_{ITT}} \times s_{\bar{x},ITT}\]
+(4)
+where 
+
+$k_{n_{ITT}}$ shall be taken from Table 1 with estimated standard deviation with acceptance probability at the 5th percentile set to 0.5. 
+
+
+
+
+
+
+
+
+
+~~NOTE The table values correspond to a 95 % confidence limit, single-sided case, in accordance with ISO 2602:1980.
+
+
+
+
+
+
+| Sample Size | Estimated Std.Dev |
+|:-----------:|:-----------------:|
+|             | Acceptance Prob   |
+|             | 0.50              |
+| 12          | 1.691             |
+| 13          | 1.687             |
+| 14          | 1.684             |
+| 15          | 1.681             |
+| 16          | 1.679             | 
+| 17          | 1.676             |
+| 18          | 1.674             |
+| 19          | 1.673             |
+| 20          | 1.671             |
+| 21          | 1.670             |
+| 22          | 1.669             |
+| 23          | 1.668             |
+| 24          | 1.667             |
+| 25          | 1.666             |
+| 26          | 1.665             |
+| 27          | 1.664             |
+| 28          | 1.663             |
+| 29          | 1.663             |
+| 30          | 1.662             | 
+
+~~NOTE The table values are based on the non-central t distribution and assume only one round of testing is conducted. 
+
+
+
+##### Variability within panels of the ITT sample 
+
+
+
+The mean standard deviation within panels of the ITT sample $\bar{S}_{w,ITT}$, where "w" is indicating "within" panels, 
+shall be derived from the standard deviation within each panel $S_{W_{J}}$ of the sample [equation (13)] according to 
+Equation (5): 
+
+\[\bar{S}_{w,ITT} = \sqrt{\frac{\sum_{j=1}^{j=n_{ITT}}s_{w,ITT}^2}{n_{ITT}}}\]
+(5)
+
+#### Evaluation by using relative test results 
+
+
+
+
+If the sample consists of panels which are covered by different lower L and/or upper U specification limits (for 
+example by combining different thickness ranges of the same standard type of panel product), the evaluation 
+shall be carried out on test results related to each specification limit as follows: 
+
+Calculate for each individual panel the relative mean $\delta{x}$ relevant to either the lower L or upper U 
+specification limit according to Equation (6) or (7), respectively: 
+
+\[\delta{x}_{j,L} = \frac{\bar{x}_{j}-L}{L}\]
+(6)
+
+
+or 
+
+\[\delta{x}_{j,U} = \frac{\bar{x}_{j}-U}{U}\]
+(7) 
+
+Calculate the grand mean of the relative differences of all panels of the inspection sample according to: 
+
+\[\delta{\bar{x}} = \frac{\sum_{1}^{n}\delta{\bar{x}}_j}{x}\]
+(8) 
+
+
+and the standard deviation $s_{\delta{\bar{x}}}$ of the relative differences between the panel means according to: 
+
+
+\[s_{\delta{\bar{x}}} = \sqrt{\frac{\sum_{1}^{n}(\delta{\bar{x}}-\bar{\delta{\bar{x}}})^2}{n-1}}\]
+(9) 
+
+
+
+To fulfil the specification requirement the lower 5 % value or the upper 95 % value, respectively, shall be equal 
+to or greater than zero for characteristics with a lower specification limit $L$ or equal to or less than zero for 
+characteristics with an upper specification limit $U$ when calculated according to Equation (10) or (11), 
+respectively: 
+
+\[L_{\delta, 5\%} = \bar{\delta{\bar{x}}} - k_{n}\times s_{\bar{\delta}\bar{x}}\]
+(10) 
+
+or 
+
+\[U_{\delta, 95\%} = \bar{\delta{\bar{x}}} - k_{n}\times s_{\bar{\delta}\bar{x}}\]
+(11 ) 

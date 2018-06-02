@@ -1,0 +1,107 @@
+# Terms and definitions 
+For the purpose of this document, the terms and definitions given in EN 326-1 :1994 and the following apply. 
+
+
+## Acceptable quality level 
+
+AQL 
+
+maximum percentage of non-conforming panels that for the purpose of sampling inspection can be considered 
+satisfactory as a process average 
+
+## At Random 
+
+sampling of panels in such a way that each panel of the inspection lot has an equal chance of being selected, 
+and cutting of test pieces from a single panel in such a way that each part of the panel has an equal chance of 
+being selected as a test piece 
+
+
+## Batch 
+
+panels of the same product type produced in a shift or continuous run
+
+## Defective 
+
+panel which does not meet the required specification limit of the relevant characteristic 
+
+## Inspection body 
+
+body which is responsible for external control 
+
+## Inspection by attributes 
+
+inspection whereby either the unit of product is classified simply as conforming or non-conforming, or the 
+number of nonconformities in the unit of product is counted, with respect to a given requirement or set of 
+requirements 
+
+## Inspection by variables 
+
+inspection whereby the conformity of a panel characteristic can be measured on a continuous scale 
+
+## Inspection lot (for factory control) 
+
+portion of production which is presented for sampling and inspection, consisting of panels of the same type, 
+normally within the same thickness range, coming from the same production line and manufactured under 
+essentially the same conditions 
+
+
+## inspection lot size $N$ 
+
+number of panels in one inspection lot 
+
+## lower specification limit $L$ 
+
+Value required by the AS?NZS specification that 95 % of the panels should have values greater than or equal to 
+
+## Panel 
+
+piece of wood-based sheet material large enough to permit the cutting of test pieces 
+
+## Percent defective 
+
+extent of non-conformity of a panel product expressed by percentage defective panels in the total number of 
+panels inspected 
+
+## Production site 
+
+single production line 
+
+## Product type 
+
+panel type, irrespective of thickness, as defined in the relevant AS/NZS specification 
+
+## Reference population 
+
+wood-based panels for which the relationship between test values is relevant 
+
+## Quality characteristic 
+
+characteristic that is essential for the evaluation of a product or product type in accordance with a relevant AS/NZS 
+specification 
+
+## Sample 
+
+collection of panels which are drawn from an inspection lot 
+
+NOTE Unless otherwise agreed, the panels of the sample are drawn at random. 
+
+## Test piece 
+
+piece of panel cut to the size required for testing a specific characteristic 
+
+## Test value $x_{ij}$ 
+
+single value or measurement of a specific characteristic obtained from a test piece 
+
+## Thickness range 
+
+panels with a thickness for which the same specification limits are valid according to the relevant AS/NZS 
+specification 
+
+## Upper specification limit $U$ 
+
+value required by the AS/NZS specification that 95 % of the panels should have values lower than or equal to 
+
+## Variable 
+
+test value or measurement which can be measured on a continuous scale 

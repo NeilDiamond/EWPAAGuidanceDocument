@@ -1,0 +1,161 @@
+# Symbols and indices 
+
+## Letter symbols (see also EN 326-1:1994) 
+
+$Ac$ Acceptance number 
+
+$AQL$ Acceptable quality level 
+
+$a$ Linear correlation constant 
+
+$b$ Linear correlation factor 
+
+$c_{conv}$ Conversion factor 
+
+$F$ Statistical factor 
+
+$L$ Lower specification limit 
+
+In Number of test pieces cut from each single panel of the sample, in either test direction 
+
+$n$ Sample size (number of panels) 
+
+$N$ Number of panels in one inspection lot, i.e. inspection lot size 
+
+$r$ Correlation coefficient; coefficient of linear regression 
+
+$Re$ Rejection number 
+
+$s_{\bar{x}}$ Estimate of the standard deviation of a characteristic between panel means $\bar{x}_j$ 
+
+$s_{\delta \bar{x}}$ 
+Estimate of the standard deviation of the relative differences of the panel means $\delta x_j$ 
+
+$s_{\Delta \bar{x}}$
+Standard deviation between panel differences 
+
+$s_{w_j}$
+
+Estimate of the standard deviation of a characteristic within a panel $j$ of the sample 
+
+$s_{\bar{x_j},alt}^2$
+
+Variance of panel means of the alternative testing procedure 
+
+$s_{\bar{x_j},ref}^2$
+
+Variance of panel means of the reference standard test
+
+$t$
+
+Statistical factor, see Table 1 
+
+$U$
+
+U Upper specification limit 
+
+$\delta$
+
+t5 Relative difference 
+
+$\Delta$
+
+Absolute difference 
+
+$V_{w,j}$
+
+Coefficient of variation within a panel $j$ of the sample 
+
+$V_{\bar{x}}$
+
+Coefficient of variation between the panel means $\bar{x}_j$ 
+
+$\varphi_{conv}$
+
+Linear conversion function 
+
+$X_{i,j}$
+
+Single test value or measurement 
+
+$\bar{X_j}$
+
+Mean value of the m test values (or measurements) obtained from a single panel $j$ 
+
+$\bar{\bar{x_n}}$
+
+Grand mean of $n$ single panel mean values 
+
+$\bar{x_{j,alt}}$
+
+Test value of the population of the alternative test procedure 
+
+$\bar{x_{j,ref}}$
+
+
+Test value of the population of the reference standard test method 
+
+$\Delta \bar{x}$
+
+ 
+Test value of the difference between the alternative test procedure and the reference standard 
+test method 
+
+
+## Indices (see also EN 326-1 : 1994) 
+
+$alt$
+
+Related to alternative testing procedure 
+
+$attr$
+
+Related to inspection by attributes 
+
+$conv$
+
+Related to conversion function 
+
+$cu$
+
+Cumulative value 
+
+$d$
+
+Related to double sample plan 
+
+$ext$
+
+Test results from the external control 
+
+$i$
+
+Serial test piece number within a panel ($i$ = 1, 2, ..., $m$) 
+
+$ITT$
+
+Test results related to initial type testing 
+
+$j$
+
+Test panel identification number within a sample ($j$ = 1, 2, ... , 11)
+
+$m$
+
+Related to number of test pieces of a panel 
+
+$n$
+
+Related to the number of panels of a sample 
+
+$ref$
+
+Related to reference standard test 
+
+$si$
+
+Related to single sampling plan 
+
+$w$
+
+Characteristic within a panel 

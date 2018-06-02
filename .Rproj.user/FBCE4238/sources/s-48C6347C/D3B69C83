@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1527913923535.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "834619150",
+    "id" : "D3B69C83",
+    "lastKnownWriteTime" : 1527918222,
+    "last_content_update" : 1527918222139,
+    "path" : "~/Documents/EWPAAGuidanceDocument/05-InititalTypeTestingByVariables.Rmd",
+    "project_path" : "05-InititalTypeTestingByVariables.Rmd",
+    "properties" : {
+        "cursorPosition" : "117,4",
+        "scrollLine" : "104"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

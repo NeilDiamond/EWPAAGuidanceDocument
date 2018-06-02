@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1527918506762.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3122940044",
+    "id" : "2750E3C5",
+    "lastKnownWriteTime" : 1527931561,
+    "last_content_update" : 1527931561819,
+    "path" : "~/Documents/EWPAAGuidanceDocument/06-5percentileAnd95percentile.Rmd",
+    "project_path" : "06-5percentileAnd95percentile.Rmd",
+    "properties" : {
+        "cursorPosition" : "268,11",
+        "scrollLine" : "247"
+    },
+    "relative_order" : 12,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

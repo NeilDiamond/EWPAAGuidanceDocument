@@ -1,0 +1,4457 @@
+\documentclass[]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={EWPAA Guidance for Compliance to AS/NZS 1859 \& 1860},
+            pdfauthor={Neil Diamond and Glenn Ryan},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{EWPAA Guidance for Compliance to AS/NZS 1859 \& 1860}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Neil Diamond and Glenn Ryan}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{2018-06-02}
+
+\usepackage{booktabs}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"bookdown"}\NormalTok{)}
+\CommentTok{# or the development version}
+\CommentTok{# devtools::install_github("rstudio/bookdown")}
+\end{Highlighting}
+\end{Shaded}
+
+\chapter{Scope}\label{scope}
+
+For external control, if required, methods for the initial inspection of
+a factory and initial type testing of a product, and for the
+surveillance of the factory production control, are given. In the
+factory production control small test pieces are used. The statistics of
+evaluation is based on normal distribution.
+
+\chapter{Normative references}\label{normative-references}
+
+\chapter{Terms and definitions}\label{terms-and-definitions}
+
+For the purpose of this document, the terms and definitions given in EN
+326-1 :1994 and the following apply.
+
+\section{Acceptable quality level}\label{acceptable-quality-level}
+
+AQL
+
+maximum percentage of non-conforming panels that for the purpose of
+sampling inspection can be considered satisfactory as a process average
+
+\section{At Random}\label{at-random}
+
+sampling of panels in such a way that each panel of the inspection lot
+has an equal chance of being selected, and cutting of test pieces from a
+single panel in such a way that each part of the panel has an equal
+chance of being selected as a test piece
+
+\section{Batch}\label{batch}
+
+panels of the same product type produced in a shift or continuous run
+
+\section{Defective}\label{defective}
+
+panel which does not meet the required specification limit of the
+relevant characteristic
+
+\section{Inspection body}\label{inspection-body}
+
+body which is responsible for external control
+
+\section{Inspection by attributes}\label{inspection-by-attributes}
+
+inspection whereby either the unit of product is classified simply as
+conforming or non-conforming, or the number of nonconformities in the
+unit of product is counted, with respect to a given requirement or set
+of requirements
+
+\section{Inspection by variables}\label{inspection-by-variables}
+
+inspection whereby the conformity of a panel characteristic can be
+measured on a continuous scale
+
+\section{Inspection lot (for factory
+control)}\label{inspection-lot-for-factory-control}
+
+portion of production which is presented for sampling and inspection,
+consisting of panels of the same type, normally within the same
+thickness range, coming from the same production line and manufactured
+under essentially the same conditions
+
+\section{\texorpdfstring{inspection lot size
+\(N\)}{inspection lot size N}}\label{inspection-lot-size-n}
+
+number of panels in one inspection lot
+
+\section{\texorpdfstring{lower specification limit
+\(L\)}{lower specification limit L}}\label{lower-specification-limit-l}
+
+Value required by the AS?NZS specification that 95 \% of the panels
+should have values greater than or equal to
+
+\section{Panel}\label{panel}
+
+piece of wood-based sheet material large enough to permit the cutting of
+test pieces
+
+\section{Percent defective}\label{percent-defective}
+
+extent of non-conformity of a panel product expressed by percentage
+defective panels in the total number of panels inspected
+
+\section{Production site}\label{production-site}
+
+single production line
+
+\section{Product type}\label{product-type}
+
+panel type, irrespective of thickness, as defined in the relevant AS/NZS
+specification
+
+\section{Reference population}\label{reference-population}
+
+wood-based panels for which the relationship between test values is
+relevant
+
+\section{Quality characteristic}\label{quality-characteristic}
+
+characteristic that is essential for the evaluation of a product or
+product type in accordance with a relevant AS/NZS specification
+
+\section{Sample}\label{sample}
+
+collection of panels which are drawn from an inspection lot
+
+NOTE Unless otherwise agreed, the panels of the sample are drawn at
+random.
+
+\section{Test piece}\label{test-piece}
+
+piece of panel cut to the size required for testing a specific
+characteristic
+
+\section{\texorpdfstring{Test value
+\(x_{ij}\)}{Test value x\_\{ij\}}}\label{test-value-x_ij}
+
+single value or measurement of a specific characteristic obtained from a
+test piece
+
+\section{Thickness range}\label{thickness-range}
+
+panels with a thickness for which the same specification limits are
+valid according to the relevant AS/NZS specification
+
+\section{\texorpdfstring{Upper specification limit
+\(U\)}{Upper specification limit U}}\label{upper-specification-limit-u}
+
+value required by the AS/NZS specification that 95 \% of the panels
+should have values lower than or equal to
+
+\section{Variable}\label{variable}
+
+test value or measurement which can be measured on a continuous scale
+
+\chapter{Symbols and indices}\label{symbols-and-indices}
+
+\section{Letter symbols (see also EN
+326-1:1994)}\label{letter-symbols-see-also-en-326-11994}
+
+\(Ac\) Acceptance number
+
+\(AQL\) Acceptable quality level
+
+\(a\) Linear correlation constant
+
+\(b\) Linear correlation factor
+
+\(c_{conv}\) Conversion factor
+
+\(F\) Statistical factor
+
+\(L\) Lower specification limit
+
+In Number of test pieces cut from each single panel of the sample, in
+either test direction
+
+\(n\) Sample size (number of panels)
+
+\(N\) Number of panels in one inspection lot, i.e.~inspection lot size
+
+\(r\) Correlation coefficient; coefficient of linear regression
+
+\(Re\) Rejection number
+
+\(s_{\bar{x}}\) Estimate of the standard deviation of a characteristic
+between panel means \(\bar{x}_j\)
+
+\(s_{\delta \bar{x}}\) Estimate of the standard deviation of the
+relative differences of the panel means \(\delta x_j\)
+
+\(s_{\Delta \bar{x}}\) Standard deviation between panel differences
+
+\(s_{w_j}\)
+
+Estimate of the standard deviation of a characteristic within a panel
+\(j\) of the sample
+
+\(s_{\bar{x_j},alt}^2\)
+
+Variance of panel means of the alternative testing procedure
+
+\(s_{\bar{x_j},ref}^2\)
+
+Variance of panel means of the reference standard test
+
+\(t\)
+
+Statistical factor, see Table 1
+
+\(U\)
+
+U Upper specification limit
+
+\(\delta\)
+
+t5 Relative difference
+
+\(\Delta\)
+
+Absolute difference
+
+\(V_{w,j}\)
+
+Coefficient of variation within a panel \(j\) of the sample
+
+\(V_{\bar{x}}\)
+
+Coefficient of variation between the panel means \(\bar{x}_j\)
+
+\(\varphi_{conv}\)
+
+Linear conversion function
+
+\(X_{i,j}\)
+
+Single test value or measurement
+
+\(\bar{X_j}\)
+
+Mean value of the m test values (or measurements) obtained from a single
+panel \(j\)
+
+\(\bar{\bar{x_n}}\)
+
+Grand mean of \(n\) single panel mean values
+
+\(\bar{x_{j,alt}}\)
+
+Test value of the population of the alternative test procedure
+
+\(\bar{x_{j,ref}}\)
+
+Test value of the population of the reference standard test method
+
+\(\Delta \bar{x}\)
+
+Test value of the difference between the alternative test procedure and
+the reference standard test method
+
+\section{Indices (see also EN 326-1 :
+1994)}\label{indices-see-also-en-326-1-1994}
+
+\(alt\)
+
+Related to alternative testing procedure
+
+\(attr\)
+
+Related to inspection by attributes
+
+\(conv\)
+
+Related to conversion function
+
+\(cu\)
+
+Cumulative value
+
+\(d\)
+
+Related to double sample plan
+
+\(ext\)
+
+Test results from the external control
+
+\(i\)
+
+Serial test piece number within a panel (\(i\) = 1, 2, \ldots{}, \(m\))
+
+\(ITT\)
+
+Test results related to initial type testing
+
+\(j\)
+
+Test panel identification number within a sample (\(j\) = 1, 2, \ldots{}
+, 11)
+
+\(m\)
+
+Related to number of test pieces of a panel
+
+\(n\)
+
+Related to the number of panels of a sample
+
+\(ref\)
+
+Related to reference standard test
+
+\(si\)
+
+Related to single sampling plan
+
+\(w\)
+
+Characteristic within a panel
+
+\chapter{Initial type testing (ITT)}\label{initial-type-testing-itt}
+
+\section{General}\label{general}
+
+Initial type testing shall be performed at the beginning of the
+production of a new product type. Initial type testing shall be
+performed according to this standard where demonstration of compliance
+is required except where tests were previously preformed in accordance
+with the provisions of these standards (i.e.~same product, same
+characteristic(s), test method, sampling procedure, system of
+conformity, etc.). In this case previous data can be used.
+
+\section{Initial type testing by
+variables}\label{initial-type-testing-by-variables}
+
+\subsection{General}\label{general-1}
+
+In general, the requirements of the panel properties are fulfilled if at
+least 95 \% of the panel means for each characteristic are above the
+lower L or below the upper U specification limit respectively. NOTE For
+examples, see Annex A.
+
+Where non-standard test methods are utilised the value of the test
+results should be adjusted by a factor based on linear correlations
+between the two methods as outlined in Appendix E of EN 326-2:2010.
+
+\subsection{Sampling of panels}\label{sampling-of-panels}
+
+The initial type testing shall comprise panels from not less than three
+production shifts. The minimum number of panels in the initial type
+testing sample \(n_{ITT}\) of a factory production is 12 panels per
+product type with at least two panels from each production line. The
+minimum number of panels may be reduced to 6, if the product properties
+can be documented from internal records of at least 12 tested panels in
+the start up period.
+
+The number of test pieces selected for each test shall be in accordance
+with AS/NZS\ldots{}\ldots{} or with agreement from the certifying body.
+
+\subsection{Evaluation}\label{evaluation}
+
+\subsubsection{Evaluation by using the test results
+directly}\label{evaluation-by-using-the-test-results-directly}
+
+\paragraph{Compliance of the ITT
+sample}\label{compliance-of-the-itt-sample}
+
+\subsubsection{Evaluation by using the test results
+directly}\label{evaluation-by-using-the-test-results-directly-1}
+
+\paragraph{Compliance of the ITT
+sample}\label{compliance-of-the-itt-sample-1}
+
+Calculate the mean value \(\bar{x}_{ITT,j}\) for each panel, the grand
+mean value \(\bar{\bar{x}}_{ITT}\) the panels and, the standard
+deviation between the panels \(S_{\bar{x},ITT}\) for each relevant
+characteristic in accordance with Equations (1) and (2):
+
+\[\bar{\bar{x}}_{ITT} = \frac{\sum_{j=1}^{j=n_{ITT}}\bar{x}_{ITT,j}}{n_{ITT}}\]
+(1)
+
+and
+\[s_{\bar{x},ITT}=\sqrt{\frac{\sum_{j=1}^{j=n_{ITT}}(\bar{x}_{ITT,j}-\bar{\bar{x}})^2}{(n_{ITT}-1)}}\]
+(2)
+
+To fulfil the specification requirement the lower 5 \% value or upper 95
+\% value shall be higher than or equal to the lower specification limit
+L or lower than or equal to the upper specification limit V
+respectively, when calculated according to the Equation (3) or (4),
+respectively:
+
+\[L_{5\%}=\bar{\bar{x}}-k_{n_{ITT}} \times s_{\bar{x},ITT}\] (3) or
+
+\[U_{95\%} = \bar{\bar{x}}_{ITT} + k_{n_{ITT}} \times s_{\bar{x},ITT}\]
+(4) where
+
+\(k_{n_{ITT}}\) shall be taken from Table 1 with estimated standard
+deviation with acceptance probability at the 5th percentile set to 0.5.
+
+\textasciitilde{}\textasciitilde{}NOTE The table values correspond to a
+95 \% confidence limit, single-sided case, in accordance with ISO
+2602:1980.
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule
+Sample Size & Estimated Std.Dev\tabularnewline
+\midrule
+\endhead
+& Acceptance Prob\tabularnewline
+& 0.50\tabularnewline
+12 & 1.691\tabularnewline
+13 & 1.687\tabularnewline
+14 & 1.684\tabularnewline
+15 & 1.681\tabularnewline
+16 & 1.679\tabularnewline
+17 & 1.676\tabularnewline
+18 & 1.674\tabularnewline
+19 & 1.673\tabularnewline
+20 & 1.671\tabularnewline
+21 & 1.670\tabularnewline
+22 & 1.669\tabularnewline
+23 & 1.668\tabularnewline
+24 & 1.667\tabularnewline
+25 & 1.666\tabularnewline
+26 & 1.665\tabularnewline
+27 & 1.664\tabularnewline
+28 & 1.663\tabularnewline
+29 & 1.663\tabularnewline
+30 & 1.662\tabularnewline
+\bottomrule
+\end{longtable}
+
+\textasciitilde{}\textasciitilde{}NOTE The table values are based on the
+non-central t distribution and assume only one round of testing is
+conducted.
+
+\paragraph{Variability within panels of the ITT
+sample}\label{variability-within-panels-of-the-itt-sample}
+
+The mean standard deviation within panels of the ITT sample
+\(\bar{S}_{w,ITT}\), where ``w'' is indicating ``within'' panels, shall
+be derived from the standard deviation within each panel \(S_{W_{J}}\)
+of the sample {[}equation (13){]} according to Equation (5):
+
+\[\bar{S}_{w,ITT} = \sqrt{\frac{\sum_{j=1}^{j=n_{ITT}}s_{w,ITT}^2}{n_{ITT}}}\]
+(5)
+
+\subsubsection{Evaluation by using relative test
+results}\label{evaluation-by-using-relative-test-results}
+
+If the sample consists of panels which are covered by different lower L
+and/or upper U specification limits (for example by combining different
+thickness ranges of the same standard type of panel product), the
+evaluation shall be carried out on test results related to each
+specification limit as follows:
+
+Calculate for each individual panel the relative mean \(\delta{x}\)
+relevant to either the lower L or upper U specification limit according
+to Equation (6) or (7), respectively:
+
+\[\delta{x}_{j,L} = \frac{\bar{x}_{j}-L}{L}\] (6)
+
+or
+
+\[\delta{x}_{j,U} = \frac{\bar{x}_{j}-U}{U}\] (7)
+
+Calculate the grand mean of the relative differences of all panels of
+the inspection sample according to:
+
+\[\delta{\bar{x}} = \frac{\sum_{1}^{n}\delta{\bar{x}}_j}{x}\] (8)
+
+and the standard deviation \(s_{\delta{\bar{x}}}\) of the relative
+differences between the panel means according to:
+
+\[s_{\delta{\bar{x}}} = \sqrt{\frac{\sum_{1}^{n}(\delta{\bar{x}}-\bar{\delta{\bar{x}}})^2}{n-1}}\]
+(9)
+
+To fulfil the specification requirement the lower 5 \% value or the
+upper 95 \% value, respectively, shall be equal to or greater than zero
+for characteristics with a lower specification limit \(L\) or equal to
+or less than zero for characteristics with an upper specification limit
+\(U\) when calculated according to Equation (10) or (11), respectively:
+
+\[L_{\delta, 5\%} = \bar{\delta{\bar{x}}} - k_{n}\times s_{\bar{\delta}\bar{x}}\]
+(10)
+
+or
+
+\[U_{\delta, 95\%} = \bar{\delta{\bar{x}}} - k_{n}\times s_{\bar{\delta}\bar{x}}\]
+(11 )
+
+\chapter{Factory production control}\label{factory-production-control}
+
+\section{General}\label{general-2}
+
+The manufacturer shall control in each separate production line those
+characteristics of panels which are required by AS/NZS? with further
+reference to other relevant specific product standards.
+
+In cases where the manufacturer chooses to claim panel characteristics
+higher than the specification levels of AS/NZS?, with further reference
+to relevant specific product standards, the factory production control
+shall be carried out according to the characteristic levels claimed.
+
+Samples shall be drawn from each product type and thickness range. The
+production may be further subdivided, for example, by thickness.
+
+Procedures alternative to the standardised procedure (for example,
+unconditioned or in-line testing) may be used for the determination of
+panel characteristics, provided that a statistically significant
+relationship can be established between the specified characteristic and
+the measured characteristic. See de3tails in section 5.2.1/
+
+Systematic differences arising from the use of alternative procedures
+shall be taken into account by individual correction factors which shall
+be determined by experiment. The correction factors shall be verified
+from time to time.
+
+\section{Sampling}\label{sampling}
+
+\subsection{General}\label{general-3}
+
+Sampling shall be carried out in accordance with the relevant AS/NZS
+specification.
+
+\subsection{Sample size}\label{sample-size}
+
+The following tables give the required sample size (number of panels per
+batch) that are to be tested so as to achieve a desired probability of
+acceptance with a specified quality level (proportion of batch means
+above the lower or upper specification limit).
+
+\subsubsection{Estimated sd, No retesting, Acc
+Prob=0.5}\label{estimated-sd-no-retesting-acc-prob0.5}
+
+\begin{longtable}[]{@{}cccccccccc@{}}
+\toprule
+\begin{minipage}[b]{0.12\columnwidth}\centering\strut
+~\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering\strut
+0.55\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering\strut
+0.6\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering\strut
+0.65\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering\strut
+0.7\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering\strut
+0.75\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering\strut
+0.8\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering\strut
+0.85\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering\strut
+0.9\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering\strut
+0.95\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.12\columnwidth}\centering\strut
+\textbf{0.96}\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+15\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering\strut
+\textbf{0.97}\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+8\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+13\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+21\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering\strut
+\textbf{0.98}\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+8\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+12\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+17\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+25\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering\strut
+\textbf{0.99}\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+10\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+16\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering\strut
+\textbf{0.995}\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+9\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsubsection{Rolling sd, No retesting, Acc
+Prob=0.5}\label{rolling-sd-no-retesting-acc-prob0.5}
+
+\begin{longtable}[]{@{}cccccccccc@{}}
+\toprule
+\begin{minipage}[b]{0.12\columnwidth}\centering\strut
+~\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering\strut
+0.55\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering\strut
+0.6\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering\strut
+0.65\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering\strut
+0.7\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering\strut
+0.75\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering\strut
+0.8\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering\strut
+0.85\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering\strut
+0.9\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering\strut
+0.95\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.12\columnwidth}\centering\strut
+\textbf{0.96}\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+9\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+15\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering\strut
+\textbf{0.97}\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+8\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+11\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering\strut
+\textbf{0.98}\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+9\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+12\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+21\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering\strut
+\textbf{0.99}\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+10\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering\strut
+\textbf{0.995}\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+6\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsubsection{Known sd, No retesting, Acc
+Prob=0.5}\label{known-sd-no-retesting-acc-prob0.5}
+
+\begin{longtable}[]{@{}cccccccccc@{}}
+\toprule
+\begin{minipage}[b]{0.12\columnwidth}\centering\strut
+~\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering\strut
+0.55\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering\strut
+0.6\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering\strut
+0.65\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering\strut
+0.7\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering\strut
+0.75\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering\strut
+0.8\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering\strut
+0.85\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering\strut
+0.9\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering\strut
+0.95\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.12\columnwidth}\centering\strut
+\textbf{0.96}\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+14\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+25\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering\strut
+\textbf{0.97}\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+9\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+13\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+20\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+30\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering\strut
+\textbf{0.98}\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+10\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+17\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering\strut
+\textbf{0.99}\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+6\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering\strut
+\textbf{0.995}\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering\strut
+4\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The current quality level can be calculated as
+\[\Phi \left( \frac{{\bar{x}-L}}{\sigma_B}\right)\] where \(\Phi()\) is
+the cumulative Normal distribition, \(\bar{\bar{x}}\) is the process
+mean, \(L\) is the Lower Specification limit, and \(\sigma_B\) is the
+between panel standard deviation.
+
+Samples should be selected at random. This can be achieved from a
+continuous process by randomising the sample cutting pattern. In a
+multi-daylight process daylight selection and location within the
+daylight/board should be randomised.
+
+\section{Control of production}\label{control-of-production}
+
+\subsection{General}\label{general-4}
+
+For assessing compliance of a product by variables the following methods
+shall be used: Factory production control by variables for batch
+production according to 6.3.2, or Internal records of an established
+product according to 6.3.4.
+
+\subsection{Factory production control by variables for batch
+production}\label{factory-production-control-by-variables-for-batch-production}
+
+In order to evaluate the compliance of the last batch production with
+the requirements of AS/NZS standards, with further reference to other
+relevant specific product standards, the manufacturer shall use the
+following procedure unless alternative procedures are adopted giving at
+least the same level of confidence.
+
+\subsubsection{Batch factory production control where no retesting is
+carried
+out}\label{batch-factory-production-control-where-no-retesting-is-carried-out}
+
+To establish the conformity of the panels with the requirements,
+estimates shall be calculated of the lower \(_{1}L_{x}\), or upper
+\(_{1}U_{x}\) confidence limit, respectively, for the production period,
+according to Equations (17) and (18), respectively:
+
+\[_{1}L_{x} = \bar{x} - k_{n}\times {s}_{\bar{x}}\] (17)
+
+or
+
+\[_{1}U_{x} = \bar{x} - k_{n}\times {s}_{\bar{x}}\] (18)
+
+where \(n\) is the number of panels sampled.
+
+The \(k_{n}\)-values in relation to the number panels sampled are given
+in the table below.
+
+If \(_1L_x\) is equal to or greater than the lower specification limit
+\(L\), or if \(_1U_x\) is equal to or less than the upper specification
+limit \(U\), respectively, the panel characteristics shall be considered
+to be in conformity with the requirements. If the requirements are not
+met, the panels of the respective production period shall be
+down-graded.
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule
+Sample Size & Estimated Std.Dev & Rolling Std. Dev & Known Std.
+Dev\tabularnewline
+\midrule
+\endhead
+& Acceptance Prob & Acceptance Prob & Acceptance Prob\tabularnewline
+& 0.50 & 0.50 & 0.50\tabularnewline
+2 & 2.339 & 1.660 & 1.645\tabularnewline
+3 & 1.939 & 1.660 & 1.645\tabularnewline
+4 & 1.830 & 1.660 & 1.645\tabularnewline
+5 & 1.779 & 1.660 & 1.645\tabularnewline
+6 & 1.751 & 1.660 & 1.645\tabularnewline
+7 & 1.732 & 1.660 & 1.645\tabularnewline
+8 & 1.719 & 1.661 & 1.645\tabularnewline
+9 & 1.709 & 1.661 & 1.645\tabularnewline
+10 & 1.702 & 1.661 & 1.645\tabularnewline
+11 & 1.696 & 1.661 & 1.645\tabularnewline
+12 & 1.691 & 1.661 & 1.645\tabularnewline
+13 & 1.687 & 1.661 & 1.645\tabularnewline
+14 & 1.684 & 1.661 & 1.645\tabularnewline
+15 & 1.681 & 1.661 & 1.645\tabularnewline
+16 & 1.679 & 1.661 & 1.645\tabularnewline
+17 & 1.676 & 1.661 & 1.645\tabularnewline
+18 & 1.674 & 1.661 & 1.645\tabularnewline
+19 & 1.673 & 1.662 & 1.645\tabularnewline
+20 & 1.671 & 1.662 & 1.645\tabularnewline
+21 & 1.670 & 1.662 & 1.645\tabularnewline
+22 & 1.669 & 1.662 & 1.645\tabularnewline
+23 & 1.668 & 1.662 & 1.645\tabularnewline
+24 & 1.667 & 1.662 & 1.645\tabularnewline
+25 & 1.666 & 1.662 & 1.645\tabularnewline
+26 & 1.665 & 1.662 & 1.645\tabularnewline
+27 & 1.664 & 1.662 & 1.645\tabularnewline
+28 & 1.663 & 1.662 & 1.645\tabularnewline
+29 & 1.663 & 1.662 & 1.645\tabularnewline
+30 & 1.662 & 1.662 & 1.645\tabularnewline
+\bottomrule
+\end{longtable}
+
+\textasciitilde{}\textasciitilde{}NOTE The table values are based on the
+non-central t distribution and assume only one round of testing is
+conducted.
+
+\section{Batch factory production control where retesting is
+allowed}\label{batch-factory-production-control-where-retesting-is-allowed}
+
+To establish the conformity of the panels with the requirements,
+estimates shall be calculated of the lower \(_{1}L_{x}\), or upper
+\(_{1}U_{x}\) confidence limit, respectively, for the production period,
+according to Equations @ref\{eq:lower\} and (18), respectively:
+
+\begin{equation}
+_{1}L_{x} = \bar{x} - k_{n}\times {s}_{\bar{x}}
+\label{eq:lower}
+\end{equation}
+
+or
+
+\[_{1}U_{x} = \bar{x} - k_{n}\times {s}_{\bar{x}}\] (18)
+
+where: the \(n\) is the number of panels sampled.
+
+The \(k_{n}\)-values in relation to the number panels sampled are given
+in the table below.
+
+If \(_1L_x\) is equal to or greater than the lower specification limit
+\(L\), or if \(_1U_x\) is equal to or less than the upper specification
+limit \(U\), respectively, the panel characteristics shall be considered
+to be in conformity with the requirements.
+
+If the requirements are not met, a further set of panels shall be
+sampled with the same sample size. In this case the grand mean values
+\(\bar{\bar{x}}_{1,2}\), shall be calculated according to Equation (21):
+
+Note: If a data point from a sample is suspected to be an outlier a
+Grubbs test should be carried out and if the result of the test
+identifies the data point as an outlier it should be discarded and a new
+sample taken.
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule
+Sample Size & Estimated Std.Dev & Rolling Std. Dev & Known Std.
+Dev\tabularnewline
+\midrule
+\endhead
+& Acceptance Prob & Acceptance Prob & Acceptance Prob\tabularnewline
+& 0.50 & 0.50 & 0.50\tabularnewline
+2 & 2.731 & 2.499 & 1.824\tabularnewline
+3 & 2.195 & 2.117 & 1.791\tabularnewline
+4 & 2.038 & 1.992 & 1.772\tabularnewline
+5 & 1.960 & 1.927 & 1.758\tabularnewline
+6 & 1.913 & 1.886 & 1.748\tabularnewline
+7 & 1.880 & 1.857 & 1.741\tabularnewline
+8 & 1.857 & 1.836 & 1.735\tabularnewline
+9 & 1.839 & 1.819 & 1.729\tabularnewline
+10 & 1.824 & 1.805 & 1.725\tabularnewline
+11 & 1.812 & 1.794 & 1.721\tabularnewline
+12 & 1.802 & 1.784 & 1.718\tabularnewline
+13 & 1.794 & 1.776 & 1.715\tabularnewline
+14 & 1.786 & 1.769 & 1.713\tabularnewline
+15 & 1.780 & 1.763 & 1.710\tabularnewline
+16 & 1.774 & 1.757 & 1.708\tabularnewline
+17 & 1.769 & 1.752 & 1.706\tabularnewline
+18 & 1.765 & 1.747 & 1.705\tabularnewline
+19 & 1.761 & 1.743 & 1.703\tabularnewline
+20 & 1.757 & 1.739 & 1.702\tabularnewline
+21 & 1.753 & 1.736 & 1.700\tabularnewline
+22 & 1.750 & 1.732 & 1.699\tabularnewline
+23 & 1.747 & 1.729 & 1.698\tabularnewline
+24 & 1.745 & 1.727 & 1.697\tabularnewline
+25 & 1.742 & 1.724 & 1.696\tabularnewline
+26 & 1.740 & 1.721 & 1.695\tabularnewline
+27 & 1.738 & 1.719 & 1.694\tabularnewline
+28 & 1.736 & 1.717 & 1.693\tabularnewline
+29 & 1.734 & 1.715 & 1.692\tabularnewline
+30 & 1.732 & 1.713 & 1.691\tabularnewline
+\bottomrule
+\end{longtable}
+
+\textasciitilde{}\textasciitilde{}NOTE The table values are based on the
+non-central t distribution and assume two rounds of testing are allowed.
+
+\subsubsection{Factory production control using a rolling standard
+deviation and continuous
+monitoring}\label{factory-production-control-using-a-rolling-standard-deviation-and-continuous-monitoring}
+
+In the previous tables, the testing is performed at the end of a
+production run. In most cases it would be desirable to sample and test
+during the production run. In that case, different k factors can be
+used. At the beginning of the run, the planned sample size needs to be
+specified. As regular intervals during the run, a panel is sampled and
+tested. To establish the conformity of the panels with the requirements,
+estimates shall be calculated of the lower \(_{1}L_{x}\), or upper
+\(_{1}U_{x}\) confidence limit, respectively, for the immediately
+preceeding production period, respectively:
+
+\[_{1}L_{x} = \bar{x} - k_{p}\times \bar{s}_{r}\]
+
+or
+
+\[_{1}U_{x} = \bar{x} - k_{p}\times \bar{s}_{r}\]
+
+where: the \(p\) is the number of panels which are planned to be sampled
+during the run, and \(\bar{s}_{r}\) is the rolling standard deviation
+based on the last 30 panel means. If the criteria above are satisfied
+(with retesting if allowed), then production can continue, while if the
+criteria are not satisfied, then the immediately preceding production
+should be downgraded.
+
+Note: If a data point from a sample is suspected to be an outlier a
+Grubbs test should be carried out and if the result of the test
+identifies the data point as an outlier it should be discarded and a new
+sample taken.
+
+The k factors are chosen so that the probability of acceptance of the
+entire run at the 5th percentile is set to 0.5 for all parameters. The k
+factors are given in the table below. Note that the k factors are
+negative when retesting is not allowed and the planned sample size is
+greater than 13 panels when the acceptance probability is 0.5, and the
+planned sample size is greater than 27 panels when the acceptance
+probability is 0.25.
+
+\begin{longtable}[]{@{}ccr@{}}
+\toprule
+Sample Size & No Retesting & Retesting\tabularnewline
+\midrule
+\endhead
+& Acceptance Prob & Acceptance Prob\tabularnewline
+& 0.50 & 0.50\tabularnewline
+1 & 1.659 & 2.057\tabularnewline
+2 & 1.104 & 1.543\tabularnewline
+3 & 0.828 & 1.290\tabularnewline
+4 & 0.649 & 1.127\tabularnewline
+5 & 0.518 & 1.009\tabularnewline
+6 & 0.415 & 0.917\tabularnewline
+7 & 0.332 & 0.841\tabularnewline
+8 & 0.261 & 0.778\tabularnewline
+9 & 0.200 & 0.724\tabularnewline
+10 & 0.147 & 0.676\tabularnewline
+11 & 0.100 & 0.634\tabularnewline
+12 & 0.057 & 0.596\tabularnewline
+13 & 0.019 & 0.562\tabularnewline
+14 & -0.017 & 0.530\tabularnewline
+15 & -0.049 & 0.501\tabularnewline
+16 & -0.079 & 0.475\tabularnewline
+17 & -0.107 & 0.450\tabularnewline
+18 & -0.134 & 0.427\tabularnewline
+19 & -0.158 & 0.405\tabularnewline
+20 & -0.181 & 0.384\tabularnewline
+21 & -0.203 & 0.365\tabularnewline
+22 & -0.224 & 0.347\tabularnewline
+23 & -0.243 & 0.329\tabularnewline
+24 & -0.262 & 0.313\tabularnewline
+25 & -0.280 & 0.297\tabularnewline
+26 & -0.297 & 0.282\tabularnewline
+27 & -0.313 & 0.268\tabularnewline
+28 & -0.329 & 0.254\tabularnewline
+29 & -0.349 & 0.241\tabularnewline
+30 & -0.359 & 0.228\tabularnewline
+\bottomrule
+\end{longtable}
+
+\textasciitilde{}\textasciitilde{}NOTE The table values are based on the
+non-central t distribution and assume no retesting and two rounds of
+testing are allowed, respectively.
+
+\paragraph{Method of updating the rolling standard
+deviation}\label{method-of-updating-the-rolling-standard-deviation}
+
+There is no need to recalculate the rolling standard deviation based on
+Equations (1) and (2). Instead, a simple updating formula can be used.
+Assume that the last 30 panel means are, in production order, given by
+\(x_0, x_1, \ldots, x_{29}\), with grand mean \(\bar{\bar{x}}_{O}\) and
+standard deviation \(s_O\). When an additional panel mean, \(x_{30}\) is
+available, the first panel mean, \(x_0\) is discarded and the new panel
+mean, \(x_{30}\) is added to the calculations to give a new grand mean
+\(\bar{\bar{x}}_{N}\) with standard deviation \(s_N\). This can be
+calculated using Equations (1) and (2), or by the updating formalae
+
+\[\bar{\bar{x}}_{N}=\bar{\bar{x}}_{O}+\frac{x_{30}-x_0}{30}\] and
+\[s_N=\sqrt{s_O^2+\frac{(x_{30}-x_0)(x_{30}-\bar{\bar{x}}_{N}+x_0-\bar{\bar{x}}_{O})}{29}}.\]
+
+\subsubsection{Metod of establishing and monitoring the known standard
+deviation}\label{metod-of-establishing-and-monitoring-the-known-standard-deviation}
+
+Monitoring of the statistical control of the standard deviation is
+desirable. If the process is in control then the known standard
+deviation k values can be used.
+
+For each bath the grand mean of the panel means, \(\bar{\bar{x}}\)
+should be calculated, as well as the standard deviation of the of the
+panel means, \(s_{\bar{x}}\).
+
+An overall average standard deviation should be calculated. This should
+be the square root of the average squared standard deviation of the
+panel means, weighted by the number of sampled panels in the batch minus
+1, i.e.
+\[\bar{s}=\sqrt{\frac{\sum((n_b-1)s_{\bar{x}}^2}{\sum((n_b-1)}}.\]
+
+At least 30-40 batches should be included in the calculation of
+\(\bar{s}\) and the value should be reviewed/updated from time to time
+(e.g.~monthly).
+
+To monitor the standard deviation, an s control chart should be used.
+The standard deviation of the panel means should be plotted against the
+batch number. The lower control limit is given by
+\[\mbox{LCL} = c_{n_b} \times \bar{s},\] while the upper control limit
+is given by \[\mbox{UCL} = d_{n_b} \times \bar{s},\] with tables of
+\(c_{n_b}\) and \(d_{n_b}\) are given below, where \(n_b\) is the number
+of panels sampled per batch.
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\centering\strut
+\(n_b\)\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering\strut
+\(c_{n_b}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering\strut
+\(d_{n_b}\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.002\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+3.205\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.037\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+2.571\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.1\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+2.283\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.163\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+2.11\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.218\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.991\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.266\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.903\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+8\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.306\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.835\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+9\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.341\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.78\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+10\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.371\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.735\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+11\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.398\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.697\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+12\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.422\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.664\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+13\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.443\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.635\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+14\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.461\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.609\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+15\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.479\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.587\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+16\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.494\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.566\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+17\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.508\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.548\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.522\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.531\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+19\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.534\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.516\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+20\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.545\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.502\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+21\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.555\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.489\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+22\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.565\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.477\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+23\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.574\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.466\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+24\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.583\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.456\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+25\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.591\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.446\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+26\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.599\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.437\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+27\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.606\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.428\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+28\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.613\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.42\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+29\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.619\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.412\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+30\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+0.625\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+1.405\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Note that the LCL and UCL depend on the number of panels sampled per
+batch and if these vary then so do the control limits. Also note that
+the control limits have nothing to do with the specification limits.
+
+Values of the standard deviation outside the limits indicate that the
+process is out of statistical control and adjustments to the process
+must be made.
+
+\subsubsection{Standardised Control
+Chart}\label{standardised-control-chart}
+
+It may be desirable to standardize the control chart for ease of
+reviwing it. This can be done in the following way:
+
+If \(G_{n_b-1}(x)\) is the cumulative distribution of the chi-square
+distribution with \(n_b-1\) degrees of freedom, and \(\Phi^{-1}(p)\) is
+the inverse Normal distribution, then a standardised control chart can
+be made by transforming the standard deviations using the transformation
+\[h(s)=\Phi^{-1}\left(G_{n_b-1}\left( \frac{(n_b-1)s^2_b}{\bar{s}^2}\right) \right)\]
+with \(LCL=-3\) and \(UCL=3\).
+
+\subsubsection{Setting a process mean
+value}\label{setting-a-process-mean-value}
+
+It may be useful to establish target values for the process mean to aid
+in factory process control. For an individual factory the targeted
+process mean value of a property shall be calculated in accordance with
+the following equations:
+
+\[ PV_L = L +K_T \sigma_B\]
+
+\[ PV_U = U -K_T \sigma_B\]
+
+where \(\sigma_B\) is the standard deviation between panel means and
+\(K_T\) depends on the target quality as follows:
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule
+Target Quality & \(K_T\)\tabularnewline
+\midrule
+\endhead
+0.96 & 1.751\tabularnewline
+0.97 & 1.881\tabularnewline
+0.98 & 2.053\tabularnewline
+0.99 & 2.326\tabularnewline
+0.995 & 2.576\tabularnewline
+\bottomrule
+\end{longtable}
+
+\chapter{Annex A}\label{annex-a}
+
+(informative)
+
+\section{Example 1, Initial type testing, Estimated Standard
+Deviation.}\label{example-1-initial-type-testing-estimated-standard-deviation.}
+
+Single sampling with 16 mm IB, Lower Specification is 0.3 Mpa. 12 panels
+were randomly selected and four tests were conducted per panel. The
+results and the calculated panel means are given in the table below.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+3,\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.3\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.16\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.24\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.32\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.255\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.36\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.5\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.37\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.41\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.41\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.41\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.46\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.45\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.39\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.38\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.41\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.3825\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.52\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.43\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.46\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.4725\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.43\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.36\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.43\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.4175\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.38\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.37\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.42\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.28\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.3625\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.44\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.46\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.5\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.47\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.58\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.58\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.57\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.56\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.58\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.52\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.62\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.5575\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.43\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.42\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.41\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.36\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.405\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.53\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.47\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.59\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.5\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.5225\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The grand mean is given by 0.439 while the standard deviation between
+panel means is given by 0.087. The 5\% comparison value is then
+\[0.439-1.691 \times 0.087 = 0.292\] which is less than 0.30 Mpa, and
+hence the initital type testing is not achieved.
+
+\section{Example 2, Initial type testing, Estimated Standard
+Deviation.}\label{example-2-initial-type-testing-estimated-standard-deviation.}
+
+Single sampling with 16 mm IB, Lower Specification is 0.3 Mpa. 12 panels
+were randomly selected and four tests were conducted per panel. The
+results and the calculated panel means are given in the table below.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+3,\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.42\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.61\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.5125\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.62\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.53\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.62\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.61\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.595\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.62\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.57\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.5\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.55\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.53\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.41\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.54\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.44\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.48\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.36\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.33\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.4\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.36\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.66\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.59\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.68\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.69\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.655\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.47\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.55\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.58\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.49\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.5225\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.71\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.72\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.67\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.59\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.6725\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.41\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.5\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.54\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.52\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.4925\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.46\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.41\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.57\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.4725\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.52\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.66\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.5425\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.6\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.58\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.47\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.54\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The grand mean is given by 0.533 while the standard deviation between
+panel means is given by 0.084. The 5\% comparison value is then
+\[0.533-1.691 \times 0.084 = 0.391\] which is greater than 0.30 Mpa, and
+hence the initital type testing is achieved.
+
+\section{Example 3, Single sampling, Estimated Standard Deviation
+(Fails).}\label{example-3-single-sampling-estimated-standard-deviation-fails.}
+
+Single sampling with 18 mm MOR, Lower Specification is 12 Mpa. Three
+panels were randomly selected and four tests were conducted per panel.
+The results and the calculated panel means are given in the table below.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+3,\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+14.1\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+12.2\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+13.6\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+13.9\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+13.45\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+15.5\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+19.6\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+16.9\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+19.1\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+17.78\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+15.5\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+16.9\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+18.9\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+18.3\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+17.4\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The grand mean is given by \[\frac{13.45+17.775 + 17.4}{3}=16.208\]
+while the standard deviation between panel means is given by
+\[\sqrt{\frac{(13.45 - 16.208)^2 + (17.775 - 16.208)^2 + (17.4 - 16.208)^2}{2}}=2.396.\]
+The 5\% comparison value is then \[16.208-1.939 \times 2.396 = 11.562\]
+which is less than 12 Mpa, and hence the specification limit is not
+achieved.
+
+\section{Example 4, Single sampling, Estimated Standard Deviation
+(Passes).}\label{example-4-single-sampling-estimated-standard-deviation-passes.}
+
+Single sampling with 18 mm MOR, Lower Specification is 12 Mpa. Three
+panels were randomly selected and four tests were conducted per panel.
+The results and the calculated panel means are given in the table below.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+3,\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+16.5\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+17.5\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+15.6\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+16\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+16.4\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+17.7\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+19\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+19.9\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+17\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+18.4\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+17.4\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+18.9\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+16.1\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+17.4\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+17.45\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The grand mean is given by \[\frac{16.4+18.4 + 17.45}{3}=17.417\] while
+the standard deviation between panel means is given by
+\[\sqrt{\frac{(16.4 - 17.417)^2 + (18.4 - 17.417)^2 + (17.45 - 17.417)^2}{2}}=1.\]
+The 5\% comparison value is then \[17.417-1.939 \times 1 = 15.478\]
+which is greater than 12 Mpa, and hence the specification limit is
+achieved.
+
+\section{Example 5, Single sampling, Known Standard Deviation
+(Passes).}\label{example-5-single-sampling-known-standard-deviation-passes.}
+
+Single sampling with 18 mm MOR, Lower Specification is 12 Mpa. The long
+run standard deviation is 1.680. Three panels were randomly selected and
+four tests were conducted per panel. The results and the calculated
+panel means are given in the table below.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+3,\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+16.7\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+13.4\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+16.2\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+14.9\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+15.3\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+18.6\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+17.3\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+16.9\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+16.8\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+17.4\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+16.9\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+21.9\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+18.3\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+17.7\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+18.7\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The grand mean is given by \[\frac{15.3+17.4 + 18.7}{3}=17.133\] The 5\%
+comparison value is then \[17.133-1.645 \times 1.680 = 14.369\] which is
+greater than 12 Mpa, and hence the specification limit is achieved.
+
+\section{Example 6, Single sampling, Known Standard Deviation
+(Fails).}\label{example-6-single-sampling-known-standard-deviation-fails.}
+
+Single sampling with 18 mm MOR, Lower Specification is 12 Mpa. The long
+run standard deviation is 1.680. Three panels were randomly selected and
+four tests were conducted per panel. The results and the calculated
+panel means are given in the table below.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+3,\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+18.7\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+11.5\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+15.1\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+14\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+14.82\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+11.7\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+12.8\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+14.3\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+14.1\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+13.23\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+15.2\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+15.3\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+14.9\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+17.9\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+15.82\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The grand mean is given by \[\frac{14.825+13.225 + 15.825}{3}=14.625\]
+The 5\% comparison value is then \[14.625-1.645 \times 1.680 = 11.861\]
+which is less than 12 Mpa, and hence the specification limit is not
+achieved.
+
+\section{Example 7, Retesting, Estimated Standard Deviation (Passes on
+first
+round).}\label{example-7-retesting-estimated-standard-deviation-passes-on-first-round.}
+
+Single sampling with 25 mm IB, Lower Specification is 0.25 Mpa. Five
+panels were randomly selected and four tests were conducted per panel.
+The results and the calculated panel means are given in the table below.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+3,\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.69\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.69\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.69\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.69\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.69\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.51\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.72\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.72\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.72\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.72\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.72\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.51\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.45\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The grand mean is given by
+\[\frac{0.69+0.51 + 0.72 + 0.51 + 0.45}{5}=0.576\] while the standard
+deviation between panel means is given by
+\[\sqrt{\frac{(0.69 - 0.576)^2 + (0.51 - 0.576)^2 + (0.72 - 0.576)^2 + (0.51 - 0.576)^2 + (0.45 - 0.576)^2}{4}}=0.121.\]
+The 5\% comparison value is then \[0.576-1.960 \times 0.121 = 0.273\]
+which is greater than 0.25 Mpa, and hence the specification limit is
+achieved.
+
+\section{Example 8, Retesting, Estimated Standard Deviation (Fails first
+round, Passses on second
+round).}\label{example-8-retesting-estimated-standard-deviation-fails-first-round-passses-on-second-round.}
+
+Single sampling with 25 mm IB, Lower Specification is 0.25 Mpa. Five
+panels were randomly selected and four tests were conducted per panel.
+The results and the calculated panel means are given in the table below.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+3,\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.39\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.39\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.39\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.39\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.39\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.3\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.3\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.3\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.3\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.3\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.42\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.42\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.42\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.42\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.42\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.35\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.51\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The grand mean is given by
+\[\frac{0.39+0.3 + 0.42 + 0.35 + 0.51}{5}=0.394\] while the standard
+deviation between panel means is given by
+\[\sqrt{\frac{(0.39 - 0.394)^2 + (0.3 - 0.394)^2 + (0.42 - 0.394)^2 + (0.35 - 0.394)^2 + (0.51 - 0.394)^2}{4}}=0.079.\]
+The 5\% comparison value is then \[0.394-1.960 \times 0.079 = 0.239\]
+which is less than 0.25 Mpa, and hence the specification limit is not
+achieved. An additional five panels were sampled, with four tests per
+sample.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+3,\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.35\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.44\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.44\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.44\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.44\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.44\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.55\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.55\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.55\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.55\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.55\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.47\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.47\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.47\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.47\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.47\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.39\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.39\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.39\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.39\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.39\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The mean of the second set of tests is given by
+\[\frac{0.35 + 0.44 + 0.55 + 0.47 + 0.39}{5} = 0.44\] while the standard
+deviation of the second set of tests is given by
+\[\sqrt{\frac{(0.35 - 0.44)^2 + (0.44 - 0.44)^2 + (0.55 - 0.44)^2 + (0.47 - 0.44)^2 + (0.39 - 0.44)^2}{4}}=0.077.\]
+The new grand mean is therefore given by
+\[\frac{0.394 + 0.44}{2} = 0.417\] while the pooled standard deviation
+for the two tests is give by
+\[\sqrt{\frac{0.006241 + 0.005929}{2}} = 0.078\]
+
+The grand mean is now given by 0.417 while the pooled standard deviation
+between panel means is given by 0.078. The 5\% comparison value is then
+\[0.417-1.960 \times 0.078 = 0.264\] which is greater than 0.25 Mpa, and
+hence the specification limit is achieved.
+
+\section{Example 9, Retesting, Estimated Standard Deviation (Fails both
+rounds).}\label{example-9-retesting-estimated-standard-deviation-fails-both-rounds.}
+
+Single sampling with 25 mm IB, Lower Specification is 0.25 Mpa. Five
+panels were randomly selected and four tests were conducted per panel.
+The results and the calculated panel means are given in the table below.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+3,\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.35\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.3\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.3\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.3\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.3\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.3\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.46\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.46\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.46\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.46\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.46\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.53\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.53\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.53\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.53\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.53\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.35\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The grand mean is given by
+\[\frac{0.35+0.3 + 0.46 + 0.53 + 0.35}{5}=0.398\] while the standard
+deviation between panel means is given by
+\[\sqrt{\frac{(0.35 - 0.398)^2 + (0.3 - 0.398)^2 + (0.46 - 0.398)^2 + (0.53 - 0.398)^2 + (0.35 - 0.398)^2}{4}}=0.094.\]
+The 5\% comparison value is then \[0.398-1.960 \times 0.094 = 0.214\]
+which is less than 0.25 Mpa, and hence the specification limit is not
+achieved. An additional five panels were sampled, with four tests per
+sample.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+3,\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.41\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.41\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.41\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.41\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.41\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.49\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.49\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.49\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.49\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.49\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.29\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.29\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.29\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.29\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.29\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.45\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.44\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.44\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.44\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.44\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.44\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The mean of the second set of tests is given by
+\[\frac{0.41 + 0.49 + 0.29 + 0.45 + 0.44}{5} = 0.416\] while the
+standard deviation of the second set of tests is given by
+\[\sqrt{\frac{(0.41 - 0.416)^2 + (0.49 - 0.416)^2 + (0.29 - 0.416)^2 + (0.45 - 0.416)^2 + (0.44 - 0.416)^2}{4}}=0.076.\]
+The new grand mean is therefore given by
+\[\frac{0.398 + 0.416}{2} = 0.407\] while the pooled standard deviation
+for the two tests is give by
+\[\sqrt{\frac{0.008836 + 0.005776}{2}} = 0.085\]
+
+The grand mean is now given by 0.407 while the pooled standard deviation
+between panel means is given by 0.085. The 5\% comparison value is then
+\[0.407-1.960 \times 0.085 = 0.24\] which is less than 0.25 Mpa, and
+hence the specification limit is not achieved.
+
+\section{Example 10, Retesting, Known Standard Deviation (Passes on
+first
+round).}\label{example-10-retesting-known-standard-deviation-passes-on-first-round.}
+
+Double sampling with 12 mm IB, Lower Specification is 0.35 Mpa. The long
+run standard deviation is 0.085. Five panels were randomly selected and
+four tests were conducted per panel. The results and the calculated
+panel means are given in the table below.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+3,\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.66\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.66\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.66\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.66\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.66\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.52\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.52\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.52\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.52\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.52\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.58\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.58\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.58\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.58\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.58\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.82\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.82\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.82\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.82\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.82\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.67\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.67\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.67\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.67\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.67\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The grand mean is given by
+\[\frac{0.66+0.52 + 0.58 + 0.82 + 0.67}{5}=0.65\] while the standard
+deviation between panel means is given by
+\[\sqrt{\frac{(0.66 - 0.65)^2 + (0.52 - 0.65)^2 + (0.58 - 0.65)^2 + (0.82 - 0.65)^2 + (0.67 - 0.65)^2}{4}}=0.113.\]
+The 5\% comparison value is then \[0.65-1.758 \times 0.113 = 0.621\]
+which is greater than 0.35 Mpa, and hence the specification limit is
+achieved.
+
+\section{Example 11, Retesting, Known Standard Deviation (Fails first
+round, Passses on second
+round).}\label{example-11-retesting-known-standard-deviation-fails-first-round-passses-on-second-round.}
+
+Double sampling with 12 mm IB, Lower Specification is 0.35 Mpa. The long
+run standard deviation is 0.085. Five panels were randomly selected and
+four tests were conducted per panel. The results and the calculated
+panel means are given in the table below.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+3,\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.48\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.48\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.45\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.51\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.44\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.44\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.44\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.44\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.44\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The grand mean is given by
+\[\frac{0.48+0.48 + 0.45 + 0.51 + 0.44}{5}=0.472\] while the standard
+deviation between panel means is given by
+\[\sqrt{\frac{(0.48 - 0.472)^2 + (0.48 - 0.472)^2 + (0.45 - 0.472)^2 + (0.51 - 0.472)^2 + (0.44 - 0.472)^2}{4}}=0.113.\]
+The 5\% comparison value is then \[0.472-1.758 \times 0.085 = 0.323\]
+which is less than 0.35 Mpa, and hence the specification limit is not
+achieved. An additional five panels were sampled, with four tests per
+sample.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+3,\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.59\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.59\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.59\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.59\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.59\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.57\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.57\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.57\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.57\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.57\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.5\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.5\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.5\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.5\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.5\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.42\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.42\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.42\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.42\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.42\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.43\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.43\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.43\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.43\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.43\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The mean of the second set of tests is given by
+\[\frac{0.59 + 0.57 + 0.5 + 0.42 + 0.43}{5} = 0.502\]
+
+The new grand mean is therefore given by
+\[\frac{0.472 + 0.502}{2} = 0.487\] while the standard deviation remains
+as 0.085.
+
+The grand mean is now given by 0.487 while the pooled standard deviation
+between panel means is given by 0.085. The 5\% comparison value is then
+\[0.487-1.758 \times 0.085 = 0.338\] which is greater than 0.35 Mpa, and
+hence the specification limit is achieved.
+
+\section{Example 12, Retesting, Known Standard Deviation (Fails both
+rounds).}\label{example-12-retesting-known-standard-deviation-fails-both-rounds.}
+
+Double sampling with 12 mm IB, Lower Specification is 0.35 Mpa. The long
+run standard deviation is 0.085. Five panels were randomly selected and
+four tests were conducted per panel. The results and the calculated
+panel means are given in the table below.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+3,\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.33\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.33\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.33\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.33\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.33\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.15\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.15\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.15\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.15\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.15\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.49\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.49\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.49\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.49\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.49\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.24\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.24\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.24\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.24\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.24\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.36\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.36\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.36\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.36\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.36\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The grand mean is given by
+\[\frac{0.33+0.15 + 0.49 + 0.24 + 0.36}{5}=0.314\] while the standard
+deviation between panel means is given by
+\[\sqrt{\frac{(0.33 - 0.314)^2 + (0.15 - 0.314)^2 + (0.49 - 0.314)^2 + (0.24 - 0.314)^2 + (0.36 - 0.314)^2}{4}}=0.085.\]
+The 5\% comparison value is then \[0.314-1.758 \times 0.085 = 0.165\]
+which is less than 0.35 Mpa, and hence the specification limit is not
+achieved. An additional five panels were sampled, with four tests per
+sample.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+3,\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.48\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.28\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.28\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.28\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.28\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.28\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.42\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.42\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.42\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.42\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.42\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.35\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.35\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.33\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.33\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.33\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.33\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.33\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The mean of the second set of tests is given by
+\[\frac{0.48 + 0.28 + 0.42 + 0.35 + 0.33}{5} = 0.372\]
+
+The new grand mean is therefore given by
+\[\frac{0.314 + 0.372}{2} = 0.343\] while the standard deviation remains
+as 0.085.
+
+The grand mean is now given by 0.343 while the pooled standard deviation
+between panel means is given by 0.085. The 5\% comparison value is then
+\[0.343-1.758 \times 0.085 = 0.194\] which is less than 0.35 Mpa, and
+hence the specification limit is not achieved.
+
+\section{Example 13, Rolling Std Deviation and Continuous
+Testing}\label{example-13-rolling-std-deviation-and-continuous-testing}
+
+Using rolling std deviation with 16 mm IB, Lower Specification is 0.30
+Mpa. Four samples are planned during the production run with four tests
+per board and retesting is allowed. The \(k\) value is 1.127. The table
+below gives the last 30 test panels for this product, with corresponding
+panel means.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.376\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.473\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.5\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.458\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.452\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.558\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.564\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.639\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.636\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.599\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.528\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.516\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.603\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.478\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.531\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.451\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.411\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.373\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.339\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.394\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.546\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.643\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.57\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.543\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.576\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.403\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.426\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.292\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.537\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.414\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.485\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.504\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.567\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.562\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.53\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.599\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.555\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.462\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.474\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.522\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.605\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.586\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.527\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.546\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.566\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.575\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.536\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.515\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.558\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.546\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.43\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.387\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.481\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.447\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.436\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.338\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.365\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.419\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.376\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.374\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.509\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.401\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.375\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.434\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.58\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.582\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.539\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.572\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.568\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.466\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.556\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.422\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.544\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.497\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.452\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.479\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.473\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.53\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.521\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.473\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.472\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.499\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.445\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.327\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.425\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.379\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.394\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.497\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.492\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.569\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.522\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.52\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.549\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.504\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.506\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.522\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.52\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.37\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.39\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.307\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.368\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.359\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.406\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.416\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.498\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.287\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.402\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.402\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.418\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.488\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.487\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.449\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.458\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.442\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.551\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.511\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.491\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.416\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.495\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.529\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.554\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.498\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.398\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.455\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.321\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.351\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.381\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.483\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.619\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.606\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.525\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.558\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.49\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.454\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.439\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.487\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.468\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.566\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.572\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.524\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.517\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.519\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.479\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.463\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.494\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The grand mean of the last 30 panel means is 0.482, while the stand
+deviation of the last 30 panel means is 0.067.
+
+The results of the first panel of the curent production run are:
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.487\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.629\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.588\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.486\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.548\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Since \[0.548-1.127\times0.067=0.472>0.30,\] the standard criteria is
+achieved and the production can proceed.
+
+The updated mean is \[ 0.482 + \frac{0.548-0.452}{30}=0.485,\] and the
+updated standard deviation is
+\[ \sqrt{0.067^2+ \frac{(0.548-0.452)\times(0.548-
+0.485+0.452-0.482)}{29}}=0.068\]
+
+The results of the second panel of the curent production run are:
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.376\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.473\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.5\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.458\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.452\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.558\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.564\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.639\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.636\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.599\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.528\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.516\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.603\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.478\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.531\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.451\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.411\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.373\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.339\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.394\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.546\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.643\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.57\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.543\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.576\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.403\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.426\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.292\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.537\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.414\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.485\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.504\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.567\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.562\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.53\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.599\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.555\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.462\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.474\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.522\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.605\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.586\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.527\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.546\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.566\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.575\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.536\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.515\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.558\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.546\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.43\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.387\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.481\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.447\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.436\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.338\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.365\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.419\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.376\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.374\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.509\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.401\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.375\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.434\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.58\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.582\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.539\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.572\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.568\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.466\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.556\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.422\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.544\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.497\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.48\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.452\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.479\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.473\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.53\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.521\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.473\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.472\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.499\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.445\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.327\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.425\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.379\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.394\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.497\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.492\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.569\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.522\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.52\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.549\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.504\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.506\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.522\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.52\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.37\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.39\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.307\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.368\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.359\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.406\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.416\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.498\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.287\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.402\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.402\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.418\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.488\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.487\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.449\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.458\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.442\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.551\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.511\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.491\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.416\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.495\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.529\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.554\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.498\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.398\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.455\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.321\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.351\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.381\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.483\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.619\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.606\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.525\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.558\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.49\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.454\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.439\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.487\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.468\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.45\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.566\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.572\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.51\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.524\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.517\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.519\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.479\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.463\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.494\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Since \[0.473-1.127\times0.068=0.396>0.30,\] the standard criteria is
+achieved and the production can proceed.
+
+The updated mean is \[ 0.485 + \frac{0.473-0.599}{30}=0.481,\] and the
+updated standard deviation is
+\[ \sqrt{0.068^2+ \frac{(0.473-0.599)\times(0.473-
+0.481+0.599-0.485)}{29}}=0.065\]
+
+The results of the third panel of the curent production run are:
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.567\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.617\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.515\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.633\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.583\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Since \[0.583-1.127\times0.065=0.51>0.30,\] the standard criteria is
+achieved and the production can proceed.
+
+The updated mean is \[ 0.481 + \frac{0.583-0.531}{30}=0.483,\] and the
+updated standard deviation is
+\[ \sqrt{0.065^2+ \frac{(0.583-0.531)\times(0.583-
+0.483+0.531-0.481)}{29}}=0.067\]
+
+The results of the fourth panel of the curent production run are:
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.344\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.34\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.331\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.26\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.319\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Since \[0.319-1.127\times0.067=0.243<0.30,\] the standard criteria is
+not achieved and another panel needs to be tested.
+
+The results of the retesting for the fourth panel of the curent
+production run are:
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering\strut
+3\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.511\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.483\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering\strut
+0.49\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+0.598\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering\strut
+0.52\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The grand mean of the two panel means is given by
+\[\frac{0.319+0.52}{2}=0.486\] Since
+\[0.486-1.127\times0.067=0.41> 0.30,\] the standard criteria is achieved
+and the production does not need to be downgraded.
+
+Two sets of updates need to be applied.
+
+The first updated mean is \[ 0.483 + \frac{0.319-0.394}{30}=0.481,\] and
+the first updated standard deviation is
+\[ \sqrt{0.067^2+ \frac{(0.319-0.394)\times(0.319-
+0.481+0.394-0.483)}{29}}=0.072\]
+
+The second updated mean is \[ 0.481 + \frac{0.52-0.576}{30}=0.479,\] and
+the second updated standard deviation is
+\[ \sqrt{0.072^2+ \frac{(0.52-0.576)\times(0.52-
+0.479+0.576-0.481)}{29}}=0.07\]
+
+\section{Example 14, Rolling Std Deviation and Continuous
+Testing}\label{example-14-rolling-std-deviation-and-continuous-testing}
+
+Using rolling std deviation with 18 mm MOR, Lower Specification is 12
+Mpa. Five samples are planned during the production run with two tests
+per board and retesting is allowed. The \(k\) value is 1.4. The table
+below gives the last 30 test panels for this product, with corresponding
+panel means.
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+14.99\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+14.59\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+14.79\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+9.731\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+14.41\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+12.07\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+14.53\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+13.44\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+13.98\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+10.31\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+18.51\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+14.41\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+14.93\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+7.783\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+11.36\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+14.41\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+15.76\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+15.09\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+13.49\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+10.69\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+12.09\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+17.22\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+16.92\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+17.07\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+8.098\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+13.97\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+11.03\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+14.17\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+14.23\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+14.2\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+9.037\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+10.52\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+9.779\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+9.499\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+14.21\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+11.86\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+13\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+12.36\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+12.68\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+15.05\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+14.45\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+14.76\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+13.6\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+11.38\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+12.49\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+13.35\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+13.9\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+13.63\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+9.172\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+12.21\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+10.69\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+10.68\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+11.5\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+11.09\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+10.82\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+11.4\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+11.11\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+13.96\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+13.04\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+13.5\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+14.03\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+14.86\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+14.44\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+13.88\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+14.46\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+14.17\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+13.06\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+15.42\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+14.24\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+12.61\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+13.89\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+13.25\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+14.28\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+10.27\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+12.27\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+16.6\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+18.52\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+17.56\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+11.48\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+16.41\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+13.95\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+17.77\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+13.67\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+15.72\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+16.33\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+16.71\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+16.52\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+16.44\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+17.8\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+17.12\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The grand mean of the last 30 panel means is 13.564, while the standard
+deviation of the last 30 panel means is 2.031.
+
+The results of the first panel of the current production run are:
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.09\columnwidth}\centering\strut
+12.7\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+17.64\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+15.17\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Since \[15.17-1.4\times2.031=12.327>12,\] the standard criteria is
+achieved and the production can proceed.
+
+The updated mean is \[ 13.564 + \frac{15.17-14.79}{30}=13.577,\] and the
+updated standard deviation is
+\[ \sqrt{2.031^2+ \frac{(15.17-14.79)\times(15.17-
+13.577+14.79-13.564)}{29}}=2.04\]
+
+The results of the second panel of the current production run are:
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+12.22\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+15.69\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+13.95\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Since \[13.954-1.4\times2.04=11.098<12,\] the standard criteria is not
+achieved and another panel needs to be tested.
+
+The results of the retesting for the second panel of the current
+production run are:
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+16.53\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+14.57\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+15.55\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The grand mean of the two panel means is given by
+\[\frac{13.954+15.547}{2}=14.751\] Since
+\[14.751-1.4\times2.04=11.895< 12,\] the standard criteria is not
+achieved and the production needs to be downgraded. No updating of the
+rolling mean or rolling standard deviation should be applied at this
+stage.
+
+The results of the third panel of the current production run are:
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+14.24\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+16.24\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+15.24\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Since \[15.242-1.4\times2.04=12.386>12,\] the standard criteria is
+achieved and the production can proceed.
+
+The updated mean is \[ 13.577 + \frac{15.242-13.982}{30}=13.619,\] and
+the updated standard deviation is
+\[ \sqrt{2.04^2+ \frac{(15.242-13.982)\times(15.242-
+13.619+13.982-13.577)}{29}}=2.061\]
+
+The results of the fourth panel of the current production run are:
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+13.06\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+12.96\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+13.01\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Since \[13.011-1.4\times2.061=10.126<12,\] the standard criteria is not
+achieved and another panel needs to be tested.
+
+The results of the retesting for the fourth panel of the current
+production run are:
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+17.62\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+16.85\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+17.23\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The grand mean of the two panel means is given by
+\[\frac{13.011+17.234}{2}=15.123\] Since
+\[15.123-1.4\times2.061=12.238> 12,\] the standard criteria is achieved
+and the production does not need to be downgraded. Two sets of updates
+need to be applied.
+
+The first updated mean is \[ 13.619 + \frac{13.011-11.356}{30}=13.572,\]
+and the first updated standard deviation is
+\[ \sqrt{2.061^2+ \frac{(13.011-11.356)\times(13.011-
+13.572+11.356-13.619)}{29}}=2.058\]
+
+The second updated mean is
+\[ 13.572 + \frac{17.234-15.085}{30}=13.768,\] and the second updated
+standard deviation is
+\[ \sqrt{2.058^2+ \frac{(17.234-15.085)\times(17.234-
+13.768+15.085-13.572)}{29}}=2.119\]
+
+The results of the fifth panel of the current production run are:
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\centering\strut
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering\strut
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering\strut
+panel mean\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.10\columnwidth}\centering\strut
+16.46\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering\strut
+16.73\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering\strut
+16.59\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Since \[16.591-1.4\times2.119=13.624>12,\] the standard criteria is
+achieved and the production can proceed.
+
+The updated mean is \[ 13.768 + \frac{16.591-15.085}{30}=13.627,\] and
+the updated standard deviation is
+\[ \sqrt{2.119^2+ \frac{(16.591-15.085)\times(16.591-
+13.627+15.085-13.768)}{29}}=2.171\]
+
+\bibliography{book.bib,packages.bib}
+
+
+\end{document}

@@ -1,0 +1,7 @@
+# Scope 
+
+
+
+For external control, if required, methods for the initial inspection of a factory and initial type testing of a 
+product, and for the surveillance of the factory production control, are given. In the factory production control small test pieces are used. The statistics of evaluation is based on normal 
+distribution. 
