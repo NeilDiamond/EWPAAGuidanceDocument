@@ -193,15 +193,19 @@ procedure unless alternative procedures are adopted giving at least the same lev
 #### Batch factory production control where no retesting is carried out
 
 To establish the conformity of the panels with the requirements, estimates shall be calculated of the lower $_{1}L_{x}$, 
-or upper $_{1}U_{x}$ confidence limit, respectively, for the production period, according to Equations (17) and (18), respectively: 
+or upper $_{1}U_{x}$ confidence limit, respectively, for the production period, according to Equations \@ref(eq:lower) and \@ref(eq:upper), respectively: 
 
-\[_{1}L_{x} = \bar{x} - k_{n}\times {s}_{\bar{x}}\]
-(17)
+\begin{equation}
+_{1}L_{x} = \bar{x} - k_{n}\times {s}_{\bar{x}}
+(\#eq:lower)
+\end{equation}
 
 or
 
-\[_{1}U_{x} = \bar{x} - k_{n}\times {s}_{\bar{x}}\]
-(18)
+\begin{equation}
+_{1}U_{x} = \bar{x} - k_{n}\times {s}_{\bar{x}}
+(\#eq:upper)
+\end{equation}
 
 where $n$ is the number of panels sampled.
 

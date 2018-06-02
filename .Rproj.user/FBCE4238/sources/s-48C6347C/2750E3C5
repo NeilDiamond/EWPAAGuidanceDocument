@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3122940044",
+    "hash" : "2260994795",
     "id" : "2750E3C5",
-    "lastKnownWriteTime" : 1527931561,
-    "last_content_update" : 1527931561819,
+    "lastKnownWriteTime" : 1527937709,
+    "last_content_update" : 1527937709656,
     "path" : "~/Documents/EWPAAGuidanceDocument/06-5percentileAnd95percentile.Rmd",
     "project_path" : "06-5percentileAnd95percentile.Rmd",
     "properties" : {
-        "cursorPosition" : "268,11",
-        "scrollLine" : "247"
+        "cursorPosition" : "205,47",
+        "scrollLine" : "189"
     },
     "relative_order" : 12,
     "source_on_save" : false,
